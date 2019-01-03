@@ -1,0 +1,69 @@
+<!-- 
+	SETUP.LAUNCH
+	Multi-agent Trajectory Planning Simulation 
+
+	USAGE : (at terminal) 1.roslaunch setup.launch
+                              2.roslaunch runsim.launch
+                (at matlab)   3.runsim
+                
+                If you want to try a new world, launch 'create_octomap_world.launch' before this.
+       
+	Jungwon Park
+	Seoul National Univ. 
+	Lab for Autonomous Robotics Research
+	wjstk335@gmail.com
+
+-->
+<launch>
+  <!-- Parameters -->
+  <arg name="world_name"          default="s-curve"/>
+
+  <arg name="x_size"   default="12"/>
+  <arg name="y_size"   default="12"/>
+  <arg name="z_size"   default="2"/>
+
+  <arg name="xy_res"   default="0.6"/>
+  <arg name="z_res"    default="1.5"/>
+
+  <arg name="init_poses" default="4 -4 1 -4 4 1 0.3 4 -3 1 -4 3 1 0.3 4 -2 1 -4 2 1 0.3 3 -4 1 -3 4 1 0.3 -4 4 1 4 -4 1 0.3 -4 3 1 4 -3 1 0.3 -4 2 1 4 -2 1 0.3 -3 4 1 3 -4 1 0.3"/>
+  <!-- Parameters End -->
+
+  <!-- Nodes -->
+  <node pkg="octomap_server" type="octomap_server_node" name="octomap_server" args = "$(find swarm_planner)/worlds/$(arg world_name).bt">
+    <param name="resolution" value="0.1" />
+    <param name="frame_id" type="string" value="world" />
+    <param name="sensor_model/max_range" value="5.0" />
+  </node>
+
+  <node pkg="swarm_planner" type="init_cond_publisher" name="init_cond_publisher" output="screen" args="$(arg init_poses)">
+    <param name="world/x_size" value="$(arg x_size)" />
+    <param name="world/y_size" value="$(arg y_size)" />
+    <param name="world/z_size" value="$(arg z_size)" />
+  </node>
+
+  <node pkg="swarm_planner" type="init_traj_generator" name="init_traj_generator" output="screen">
+    <param name="world/x_size" value="$(arg x_size)" />
+    <param name="world/y_size" value="$(arg y_size)" />
+    <param name="world/z_size" value="$(arg z_size)" />
+
+    <param name="ecbs/w" value="2.5" />
+    <param name="ecbs/xy_res" value="$(arg xy_res)" />
+    <param name="ecbs/z_res" value="$(arg z_res)" />
+    <param name="ecbs/obs_margin" value="0.4" />
+    <param name="ecbs/dw_factor" value="3" />
+  </node>
+
+  <node pkg="swarm_planner" type="sfc_generator" name="sfc_generator" output="screen">
+    <param name="world/x_size" value="$(arg x_size)" />
+    <param name="world/y_size" value="$(arg y_size)" />
+    <param name="world/z_size" value="$(arg z_size)" />
+
+    <param name="ecbs/xy_res" value="$(arg xy_res)" />
+    <param name="ecbs/z_res"  value="$(arg z_res)" />
+
+    <param name="box/xy_res" value="0.1" />
+    <param name="box/z_res"  value="0.1" />
+    <param name="box/margin" value="0.3" />
+  </node>
+  <!-- Nodes End-->
+</launch>

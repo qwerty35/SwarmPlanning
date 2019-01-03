@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/jungwon/SwarmPlanning/cmake-build-debug/devel/setup.sh
