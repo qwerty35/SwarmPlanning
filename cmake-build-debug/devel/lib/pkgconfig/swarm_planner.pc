@@ -1,0 +1,8 @@
+prefix=/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel
+
+Name: swarm_planner
+Description: Description of swarm_planner
+Version: 0.0.1
+Cflags: -I/home/jungwon/catkin_ws/src/SwarmPlanning/include
+Libs: -L/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib 
+Requires: message_runtime

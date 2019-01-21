@@ -1,26 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fe301/fast"
-make[1]: Entering directory '/home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_fe301.dir/build.make CMakeFiles/cmTC_fe301.dir/build
-make[2]: Entering directory '/home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_fe301.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_fe301.dir/CheckSymbolExists.c.o   -c /home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_fe301
-/home/jungwon/clion-2018.2.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe301.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_fe301.dir/CheckSymbolExists.c.o  -o cmTC_fe301 
-CMakeFiles/cmTC_fe301.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_1b06b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1b06b.dir/build.make CMakeFiles/cmTC_1b06b.dir/build
+make[1]: Entering directory '/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1b06b.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_1b06b.dir/CheckSymbolExists.c.o   -c /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_1b06b
+/home/jungwon/clion-2018.2.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1b06b.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1b06b.dir/CheckSymbolExists.c.o  -o cmTC_1b06b 
+CMakeFiles/cmTC_1b06b.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_fe301.dir/build.make:86: recipe for target 'cmTC_fe301' failed
-make[2]: *** [cmTC_fe301] Error 1
-make[2]: Leaving directory '/home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
-Makefile:121: recipe for target 'cmTC_fe301/fast' failed
-make[1]: *** [cmTC_fe301/fast] Error 2
-make[1]: Leaving directory '/home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
+CMakeFiles/cmTC_1b06b.dir/build.make:86: recipe for target 'cmTC_1b06b' failed
+make[1]: *** [cmTC_1b06b] Error 1
+make[1]: Leaving directory '/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_1b06b/fast' failed
+make: *** [cmTC_1b06b/fast] Error 2
 
-File /home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -36,24 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e4d74/fast"
-make[1]: Entering directory '/home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
-/usr/bin/make -f CMakeFiles/cmTC_e4d74.dir/build.make CMakeFiles/cmTC_e4d74.dir/build
-make[2]: Entering directory '/home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e4d74.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e4d74.dir/CheckFunctionExists.c.o   -c /home/jungwon/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CheckFunctionExists.c
-Linking C executable cmTC_e4d74
-/home/jungwon/clion-2018.2.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4d74.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_e4d74.dir/CheckFunctionExists.c.o  -o cmTC_e4d74 -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_90202/fast"
+/usr/bin/make -f CMakeFiles/cmTC_90202.dir/build.make CMakeFiles/cmTC_90202.dir/build
+make[1]: Entering directory '/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_90202.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_90202.dir/CheckFunctionExists.c.o   -c /home/jungwon/clion-2018.2.2/bin/cmake/linux/share/cmake-3.12/Modules/CheckFunctionExists.c
+Linking C executable cmTC_90202
+/home/jungwon/clion-2018.2.2/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90202.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_90202.dir/CheckFunctionExists.c.o  -o cmTC_90202 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_e4d74.dir/build.make:86: recipe for target 'cmTC_e4d74' failed
-make[2]: *** [cmTC_e4d74] Error 1
-make[2]: Leaving directory '/home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
-Makefile:121: recipe for target 'cmTC_e4d74/fast' failed
-make[1]: *** [cmTC_e4d74/fast] Error 2
-make[1]: Leaving directory '/home/jungwon/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
+CMakeFiles/cmTC_90202.dir/build.make:86: recipe for target 'cmTC_90202' failed
+make[1]: *** [cmTC_90202] Error 1
+make[1]: Leaving directory '/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_90202/fast' failed
+make: *** [cmTC_90202/fast] Error 2
 
 

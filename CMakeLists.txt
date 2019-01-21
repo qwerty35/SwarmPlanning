@@ -4,6 +4,7 @@ project(swarm_planner)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
+set(CMAKE_BUILD_TYPE Release)
 
 # THIRD PARTY
 add_subdirectory(${PROJECT_SOURCE_DIR}/third_party/ecbs)
@@ -46,26 +47,33 @@ catkin_package(
 )
 
 # BUILD
-add_executable(init_traj_generator init_traj_generator.cpp)
+add_executable(init_traj_generator src/init_traj_generator.cpp)
 target_link_libraries(init_traj_generator
   ${catkin_LIBRARIES}
   ${PCL_LIBRARIES}
   ${OCTOMAP_INCLUDE_DIRS}
 )
-add_executable(sfc_generator sfc_generator.cpp)
+add_executable(sfc_generator src/sfc_generator.cpp)
 target_link_libraries(sfc_generator
   ${catkin_LIBRARIES}
   ${PCL_LIBRARIES}
   ${OCTOMAP_INCLUDE_DIRS}
 )
 
-add_executable(random_map_generator random_map_generator.cpp)
+add_executable(obstacle_box_generator src/obstacle_box_generator.cpp)
+target_link_libraries(obstacle_box_generator
+  ${catkin_LIBRARIES}
+  ${PCL_LIBRARIES}
+  ${OCTOMAP_INCLUDE_DIRS}
+)
+
+add_executable(random_map_generator src/random_map_generator.cpp)
 target_link_libraries(random_map_generator
   ${catkin_LIBRARIES}
   ${PCL_LIBRARIES}
 )
 
-add_executable(init_cond_publisher init_cond_publisher.cpp)
+add_executable(init_cond_publisher src/init_cond_publisher.cpp)
 target_link_libraries(init_cond_publisher
   ${catkin_LIBRARIES}
   ${PCL_LIBRARIES}

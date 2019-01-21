@@ -12,7 +12,7 @@
 	wjstk335@gmail.com
 -->
 <launch>
-  <arg name="world_name" default="face"/>
+  <arg name="world_name" default="s-curve5"/>
   <arg name="x_ori"      default="0"/>
   <arg name="y_ori"      default="0"/>
   <arg name="z_ori"      default="2"/>
@@ -28,7 +28,7 @@
     <arg name="world_name" value="$(find rotors_gazebo)/worlds/$(arg world_name).world"/>
     <!-- <arg name="debug" value="true"/> -->
     <arg name="paused" value="false"/>
-    <!-- <arg name="gui" value="false"/> -->
+    <arg name="gui" value="false"/>
   </include>
 
   <node pkg="rosservice" type="rosservice" name="global_loc" args="call --wait /world/get_octomap '{bounding_box_origin: {x: $(arg x_ori), y: $(arg y_ori), z: $(arg z_ori)}, bounding_box_lengths: {x: $(arg x_size), y: $(arg y_size), z: $(arg z_size)}, leaf_size: $(arg leaf_size), filename: $(find swarm_planner)/worlds/$(arg world_name).bt}'"/>
