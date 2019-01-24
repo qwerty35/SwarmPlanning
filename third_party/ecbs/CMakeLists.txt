@@ -67,35 +67,35 @@ include_directories(
 
 # Src
 
-## a_star_epsilon
-add_executable(a_star_epsilon
-  src/a_star_epsilon.cpp
-)
-target_link_libraries(a_star_epsilon
-  ${Boost_LIBRARIES}
-)
-
-## ecbs
-add_executable(ecbs
-  src/ecbs.cpp
-)
-target_link_libraries(ecbs
-  ${Boost_LIBRARIES}
-  yaml-cpp
-)
-## a_star
-add_executable(a_star
-  src/a_star.cpp
-)
-target_link_libraries(a_star
-  ${Boost_LIBRARIES}
-)
-
-## cbs
-add_executable(cbs
-  src/cbs.cpp
-)
-target_link_libraries(cbs
-  ${Boost_LIBRARIES}
-  yaml-cpp
-)
+### a_star_epsilon
+#add_executable(a_star_epsilon
+#  src/a_star_epsilon.cpp
+#)
+#target_link_libraries(a_star_epsilon
+#  ${Boost_LIBRARIES}
+#)
+#
+### ecbs
+#add_executable(ecbs
+#  src/ecbs.cpp
+#)
+#target_link_libraries(ecbs
+#  ${Boost_LIBRARIES}
+#  yaml-cpp
+#)
+### a_star
+#add_executable(a_star
+#  src/a_star.cpp
+#)
+#target_link_libraries(a_star
+#  ${Boost_LIBRARIES}
+#)
+#
+### cbs
+#add_executable(cbs
+#  src/cbs.cpp
+#)
+#target_link_libraries(cbs
+#  ${Boost_LIBRARIES}
+#  yaml-cpp
+#)

@@ -168,21 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-third_party/ecbs/CMakeFiles/a_star_epsilon.dir/rule:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 third_party/ecbs/CMakeFiles/a_star_epsilon.dir/rule
-.PHONY : third_party/ecbs/CMakeFiles/a_star_epsilon.dir/rule
-
-# Convenience name for target.
-a_star_epsilon: third_party/ecbs/CMakeFiles/a_star_epsilon.dir/rule
-
-.PHONY : a_star_epsilon
-
-# fast build rule for target.
-a_star_epsilon/fast:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/a_star_epsilon.dir/build.make third_party/ecbs/CMakeFiles/a_star_epsilon.dir/build
-.PHONY : a_star_epsilon/fast
-
-# Convenience name for target.
 third_party/ecbs/CMakeFiles/download_extra_data.dir/rule:
 	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 third_party/ecbs/CMakeFiles/download_extra_data.dir/rule
 .PHONY : third_party/ecbs/CMakeFiles/download_extra_data.dir/rule
@@ -211,21 +196,6 @@ std_msgs_generate_messages_eus: third_party/ecbs/CMakeFiles/std_msgs_generate_me
 std_msgs_generate_messages_eus/fast:
 	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make third_party/ecbs/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-third_party/ecbs/CMakeFiles/cbs.dir/rule:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 third_party/ecbs/CMakeFiles/cbs.dir/rule
-.PHONY : third_party/ecbs/CMakeFiles/cbs.dir/rule
-
-# Convenience name for target.
-cbs: third_party/ecbs/CMakeFiles/cbs.dir/rule
-
-.PHONY : cbs
-
-# fast build rule for target.
-cbs/fast:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/cbs.dir/build.make third_party/ecbs/CMakeFiles/cbs.dir/build
-.PHONY : cbs/fast
 
 # Convenience name for target.
 third_party/ecbs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
@@ -333,21 +303,6 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-third_party/ecbs/CMakeFiles/ecbs.dir/rule:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 third_party/ecbs/CMakeFiles/ecbs.dir/rule
-.PHONY : third_party/ecbs/CMakeFiles/ecbs.dir/rule
-
-# Convenience name for target.
-ecbs: third_party/ecbs/CMakeFiles/ecbs.dir/rule
-
-.PHONY : ecbs
-
-# fast build rule for target.
-ecbs/fast:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/ecbs.dir/build.make third_party/ecbs/CMakeFiles/ecbs.dir/build
-.PHONY : ecbs/fast
-
-# Convenience name for target.
 third_party/ecbs/CMakeFiles/doxygen.dir/rule:
 	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 third_party/ecbs/CMakeFiles/doxygen.dir/rule
 .PHONY : third_party/ecbs/CMakeFiles/doxygen.dir/rule
@@ -436,21 +391,6 @@ sensor_msgs_generate_messages_eus: third_party/ecbs/CMakeFiles/sensor_msgs_gener
 sensor_msgs_generate_messages_eus/fast:
 	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make third_party/ecbs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-third_party/ecbs/CMakeFiles/a_star.dir/rule:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 third_party/ecbs/CMakeFiles/a_star.dir/rule
-.PHONY : third_party/ecbs/CMakeFiles/a_star.dir/rule
-
-# Convenience name for target.
-a_star: third_party/ecbs/CMakeFiles/a_star.dir/rule
-
-.PHONY : a_star
-
-# fast build rule for target.
-a_star/fast:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/a_star.dir/build.make third_party/ecbs/CMakeFiles/a_star.dir/build
-.PHONY : a_star/fast
 
 # Convenience name for target.
 third_party/ecbs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
@@ -572,114 +512,6 @@ clang-tidy/fast:
 	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/clang-tidy.dir/build.make third_party/ecbs/CMakeFiles/clang-tidy.dir/build
 .PHONY : clang-tidy/fast
 
-src/a_star.o: src/a_star.cpp.o
-
-.PHONY : src/a_star.o
-
-# target to build an object file
-src/a_star.cpp.o:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/a_star.dir/build.make third_party/ecbs/CMakeFiles/a_star.dir/src/a_star.cpp.o
-.PHONY : src/a_star.cpp.o
-
-src/a_star.i: src/a_star.cpp.i
-
-.PHONY : src/a_star.i
-
-# target to preprocess a source file
-src/a_star.cpp.i:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/a_star.dir/build.make third_party/ecbs/CMakeFiles/a_star.dir/src/a_star.cpp.i
-.PHONY : src/a_star.cpp.i
-
-src/a_star.s: src/a_star.cpp.s
-
-.PHONY : src/a_star.s
-
-# target to generate assembly for a file
-src/a_star.cpp.s:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/a_star.dir/build.make third_party/ecbs/CMakeFiles/a_star.dir/src/a_star.cpp.s
-.PHONY : src/a_star.cpp.s
-
-src/a_star_epsilon.o: src/a_star_epsilon.cpp.o
-
-.PHONY : src/a_star_epsilon.o
-
-# target to build an object file
-src/a_star_epsilon.cpp.o:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/a_star_epsilon.dir/build.make third_party/ecbs/CMakeFiles/a_star_epsilon.dir/src/a_star_epsilon.cpp.o
-.PHONY : src/a_star_epsilon.cpp.o
-
-src/a_star_epsilon.i: src/a_star_epsilon.cpp.i
-
-.PHONY : src/a_star_epsilon.i
-
-# target to preprocess a source file
-src/a_star_epsilon.cpp.i:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/a_star_epsilon.dir/build.make third_party/ecbs/CMakeFiles/a_star_epsilon.dir/src/a_star_epsilon.cpp.i
-.PHONY : src/a_star_epsilon.cpp.i
-
-src/a_star_epsilon.s: src/a_star_epsilon.cpp.s
-
-.PHONY : src/a_star_epsilon.s
-
-# target to generate assembly for a file
-src/a_star_epsilon.cpp.s:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/a_star_epsilon.dir/build.make third_party/ecbs/CMakeFiles/a_star_epsilon.dir/src/a_star_epsilon.cpp.s
-.PHONY : src/a_star_epsilon.cpp.s
-
-src/cbs.o: src/cbs.cpp.o
-
-.PHONY : src/cbs.o
-
-# target to build an object file
-src/cbs.cpp.o:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/cbs.dir/build.make third_party/ecbs/CMakeFiles/cbs.dir/src/cbs.cpp.o
-.PHONY : src/cbs.cpp.o
-
-src/cbs.i: src/cbs.cpp.i
-
-.PHONY : src/cbs.i
-
-# target to preprocess a source file
-src/cbs.cpp.i:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/cbs.dir/build.make third_party/ecbs/CMakeFiles/cbs.dir/src/cbs.cpp.i
-.PHONY : src/cbs.cpp.i
-
-src/cbs.s: src/cbs.cpp.s
-
-.PHONY : src/cbs.s
-
-# target to generate assembly for a file
-src/cbs.cpp.s:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/cbs.dir/build.make third_party/ecbs/CMakeFiles/cbs.dir/src/cbs.cpp.s
-.PHONY : src/cbs.cpp.s
-
-src/ecbs.o: src/ecbs.cpp.o
-
-.PHONY : src/ecbs.o
-
-# target to build an object file
-src/ecbs.cpp.o:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/ecbs.dir/build.make third_party/ecbs/CMakeFiles/ecbs.dir/src/ecbs.cpp.o
-.PHONY : src/ecbs.cpp.o
-
-src/ecbs.i: src/ecbs.cpp.i
-
-.PHONY : src/ecbs.i
-
-# target to preprocess a source file
-src/ecbs.cpp.i:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/ecbs.dir/build.make third_party/ecbs/CMakeFiles/ecbs.dir/src/ecbs.cpp.i
-.PHONY : src/ecbs.cpp.i
-
-src/ecbs.s: src/ecbs.cpp.s
-
-.PHONY : src/ecbs.s
-
-# target to generate assembly for a file
-src/ecbs.cpp.s:
-	cd /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug && $(MAKE) -f third_party/ecbs/CMakeFiles/ecbs.dir/build.make third_party/ecbs/CMakeFiles/ecbs.dir/src/ecbs.cpp.s
-.PHONY : src/ecbs.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -692,10 +524,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... a_star_epsilon"
 	@echo "... download_extra_data"
 	@echo "... std_msgs_generate_messages_eus"
-	@echo "... cbs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... clang-format"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -703,7 +533,6 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... ecbs"
 	@echo "... doxygen"
 	@echo "... run_tests"
 	@echo "... sensor_msgs_generate_messages_py"
@@ -711,7 +540,6 @@ help:
 	@echo "... docs"
 	@echo "... list_install_components"
 	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... a_star"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
@@ -720,18 +548,6 @@ help:
 	@echo "... clean_test_results"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... clang-tidy"
-	@echo "... src/a_star.o"
-	@echo "... src/a_star.i"
-	@echo "... src/a_star.s"
-	@echo "... src/a_star_epsilon.o"
-	@echo "... src/a_star_epsilon.i"
-	@echo "... src/a_star_epsilon.s"
-	@echo "... src/cbs.o"
-	@echo "... src/cbs.i"
-	@echo "... src/cbs.s"
-	@echo "... src/ecbs.o"
-	@echo "... src/ecbs.i"
-	@echo "... src/ecbs.s"
 .PHONY : help
 
 

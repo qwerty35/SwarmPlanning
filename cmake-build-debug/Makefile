@@ -80,17 +80,6 @@ install/fast: preinstall/fast
 	/home/jungwon/clion-2018.2.2/bin/cmake/linux/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/jungwon/clion-2018.2.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -103,6 +92,27 @@ install/strip/fast: preinstall/fast
 	/home/jungwon/clion-2018.2.2/bin/cmake/linux/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/home/jungwon/clion-2018.2.2/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -113,16 +123,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target test
 test:
@@ -166,19 +166,6 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_cpp
-
-# Build rule for target.
-tf_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_cpp
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	$(MAKE) -f CMakeFiles/tf_generate_messages_cpp.dir/build.make CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named actionlib_generate_messages_eus
@@ -324,6 +311,32 @@ tf2_msgs_generate_messages_eus/fast:
 .PHONY : tf2_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named actionlib_msgs_generate_messages_nodejs
+
+# Build rule for target.
+actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_nodejs
+.PHONY : actionlib_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
+.PHONY : actionlib_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named tf2_msgs_generate_messages_py
+
+# Build rule for target.
+tf2_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_py
+.PHONY : tf2_msgs_generate_messages_py
+
+# fast build rule for target.
+tf2_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make CMakeFiles/tf2_msgs_generate_messages_py.dir/build
+.PHONY : tf2_msgs_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named octomap_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -361,19 +374,6 @@ octomap_msgs_generate_messages_py: cmake_check_build_system
 octomap_msgs_generate_messages_py/fast:
 	$(MAKE) -f CMakeFiles/octomap_msgs_generate_messages_py.dir/build.make CMakeFiles/octomap_msgs_generate_messages_py.dir/build
 .PHONY : octomap_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named tf_generate_messages_eus
-
-# Build rule for target.
-tf_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_eus
-.PHONY : tf_generate_messages_eus
-
-# fast build rule for target.
-tf_generate_messages_eus/fast:
-	$(MAKE) -f CMakeFiles/tf_generate_messages_eus.dir/build.make CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named roscpp_generate_messages_nodejs
@@ -452,19 +452,6 @@ roscpp_generate_messages_eus: cmake_check_build_system
 roscpp_generate_messages_eus/fast:
 	$(MAKE) -f CMakeFiles/roscpp_generate_messages_eus.dir/build.make CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named obstacle_box_generator
-
-# Build rule for target.
-obstacle_box_generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obstacle_box_generator
-.PHONY : obstacle_box_generator
-
-# fast build rule for target.
-obstacle_box_generator/fast:
-	$(MAKE) -f CMakeFiles/obstacle_box_generator.dir/build.make CMakeFiles/obstacle_box_generator.dir/build
-.PHONY : obstacle_box_generator/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_eus
@@ -623,6 +610,32 @@ init_traj_generator/fast:
 .PHONY : init_traj_generator/fast
 
 #=============================================================================
+# Target rules for targets named tf_generate_messages_cpp
+
+# Build rule for target.
+tf_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_cpp
+.PHONY : tf_generate_messages_cpp
+
+# fast build rule for target.
+tf_generate_messages_cpp/fast:
+	$(MAKE) -f CMakeFiles/tf_generate_messages_cpp.dir/build.make CMakeFiles/tf_generate_messages_cpp.dir/build
+.PHONY : tf_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named blend
+
+# Build rule for target.
+blend: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 blend
+.PHONY : blend
+
+# fast build rule for target.
+blend/fast:
+	$(MAKE) -f CMakeFiles/blend.dir/build.make CMakeFiles/blend.dir/build
+.PHONY : blend/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -647,6 +660,19 @@ actionlib_generate_messages_nodejs: cmake_check_build_system
 actionlib_generate_messages_nodejs/fast:
 	$(MAKE) -f CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make CMakeFiles/actionlib_generate_messages_nodejs.dir/build
 .PHONY : actionlib_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named tf_generate_messages_eus
+
+# Build rule for target.
+tf_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_generate_messages_eus
+.PHONY : tf_generate_messages_eus
+
+# fast build rule for target.
+tf_generate_messages_eus/fast:
+	$(MAKE) -f CMakeFiles/tf_generate_messages_eus.dir/build.make CMakeFiles/tf_generate_messages_eus.dir/build
+.PHONY : tf_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_lisp
@@ -688,19 +714,6 @@ octomap_msgs_generate_messages_eus/fast:
 .PHONY : octomap_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named sfc_generator
-
-# Build rule for target.
-sfc_generator: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sfc_generator
-.PHONY : sfc_generator
-
-# fast build rule for target.
-sfc_generator/fast:
-	$(MAKE) -f CMakeFiles/sfc_generator.dir/build.make CMakeFiles/sfc_generator.dir/build
-.PHONY : sfc_generator/fast
-
-#=============================================================================
 # Target rules for targets named octomap_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -712,58 +725,6 @@ octomap_msgs_generate_messages_nodejs: cmake_check_build_system
 octomap_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/octomap_msgs_generate_messages_nodejs.dir/build
 .PHONY : octomap_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named actionlib_msgs_generate_messages_nodejs
-
-# Build rule for target.
-actionlib_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 actionlib_msgs_generate_messages_nodejs
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named tf2_msgs_generate_messages_py
-
-# Build rule for target.
-tf2_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tf2_msgs_generate_messages_py
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	$(MAKE) -f CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named init_cond_publisher
-
-# Build rule for target.
-init_cond_publisher: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 init_cond_publisher
-.PHONY : init_cond_publisher
-
-# fast build rule for target.
-init_cond_publisher/fast:
-	$(MAKE) -f CMakeFiles/init_cond_publisher.dir/build.make CMakeFiles/init_cond_publisher.dir/build
-.PHONY : init_cond_publisher/fast
-
-#=============================================================================
-# Target rules for targets named a_star_epsilon
-
-# Build rule for target.
-a_star_epsilon: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 a_star_epsilon
-.PHONY : a_star_epsilon
-
-# fast build rule for target.
-a_star_epsilon/fast:
-	$(MAKE) -f third_party/ecbs/CMakeFiles/a_star_epsilon.dir/build.make third_party/ecbs/CMakeFiles/a_star_epsilon.dir/build
-.PHONY : a_star_epsilon/fast
 
 #=============================================================================
 # Target rules for targets named download_extra_data
@@ -790,19 +751,6 @@ std_msgs_generate_messages_eus: cmake_check_build_system
 std_msgs_generate_messages_eus/fast:
 	$(MAKE) -f third_party/ecbs/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make third_party/ecbs/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named cbs
-
-# Build rule for target.
-cbs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cbs
-.PHONY : cbs
-
-# fast build rule for target.
-cbs/fast:
-	$(MAKE) -f third_party/ecbs/CMakeFiles/cbs.dir/build.make third_party/ecbs/CMakeFiles/cbs.dir/build
-.PHONY : cbs/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_cpp
@@ -896,19 +844,6 @@ std_msgs_generate_messages_nodejs/fast:
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named ecbs
-
-# Build rule for target.
-ecbs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ecbs
-.PHONY : ecbs
-
-# fast build rule for target.
-ecbs/fast:
-	$(MAKE) -f third_party/ecbs/CMakeFiles/ecbs.dir/build.make third_party/ecbs/CMakeFiles/ecbs.dir/build
-.PHONY : ecbs/fast
-
-#=============================================================================
 # Target rules for targets named doxygen
 
 # Build rule for target.
@@ -985,19 +920,6 @@ sensor_msgs_generate_messages_eus: cmake_check_build_system
 sensor_msgs_generate_messages_eus/fast:
 	$(MAKE) -f third_party/ecbs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make third_party/ecbs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
 .PHONY : sensor_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named a_star
-
-# Build rule for target.
-a_star: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 a_star
-.PHONY : a_star
-
-# fast build rule for target.
-a_star/fast:
-	$(MAKE) -f third_party/ecbs/CMakeFiles/a_star.dir/build.make third_party/ecbs/CMakeFiles/a_star.dir/build
-.PHONY : a_star/fast
 
 #=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_lisp
@@ -1155,32 +1077,32 @@ gtest_main/fast:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest_main.dir/build.make gtest/gtest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-src/init_cond_publisher.o: src/init_cond_publisher.cpp.o
+src/blend.o: src/blend.cpp.o
 
-.PHONY : src/init_cond_publisher.o
+.PHONY : src/blend.o
 
 # target to build an object file
-src/init_cond_publisher.cpp.o:
-	$(MAKE) -f CMakeFiles/init_cond_publisher.dir/build.make CMakeFiles/init_cond_publisher.dir/src/init_cond_publisher.cpp.o
-.PHONY : src/init_cond_publisher.cpp.o
+src/blend.cpp.o:
+	$(MAKE) -f CMakeFiles/blend.dir/build.make CMakeFiles/blend.dir/src/blend.cpp.o
+.PHONY : src/blend.cpp.o
 
-src/init_cond_publisher.i: src/init_cond_publisher.cpp.i
+src/blend.i: src/blend.cpp.i
 
-.PHONY : src/init_cond_publisher.i
+.PHONY : src/blend.i
 
 # target to preprocess a source file
-src/init_cond_publisher.cpp.i:
-	$(MAKE) -f CMakeFiles/init_cond_publisher.dir/build.make CMakeFiles/init_cond_publisher.dir/src/init_cond_publisher.cpp.i
-.PHONY : src/init_cond_publisher.cpp.i
+src/blend.cpp.i:
+	$(MAKE) -f CMakeFiles/blend.dir/build.make CMakeFiles/blend.dir/src/blend.cpp.i
+.PHONY : src/blend.cpp.i
 
-src/init_cond_publisher.s: src/init_cond_publisher.cpp.s
+src/blend.s: src/blend.cpp.s
 
-.PHONY : src/init_cond_publisher.s
+.PHONY : src/blend.s
 
 # target to generate assembly for a file
-src/init_cond_publisher.cpp.s:
-	$(MAKE) -f CMakeFiles/init_cond_publisher.dir/build.make CMakeFiles/init_cond_publisher.dir/src/init_cond_publisher.cpp.s
-.PHONY : src/init_cond_publisher.cpp.s
+src/blend.cpp.s:
+	$(MAKE) -f CMakeFiles/blend.dir/build.make CMakeFiles/blend.dir/src/blend.cpp.s
+.PHONY : src/blend.cpp.s
 
 src/init_traj_generator.o: src/init_traj_generator.cpp.o
 
@@ -1209,33 +1131,6 @@ src/init_traj_generator.cpp.s:
 	$(MAKE) -f CMakeFiles/init_traj_generator.dir/build.make CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.s
 .PHONY : src/init_traj_generator.cpp.s
 
-src/obstacle_box_generator.o: src/obstacle_box_generator.cpp.o
-
-.PHONY : src/obstacle_box_generator.o
-
-# target to build an object file
-src/obstacle_box_generator.cpp.o:
-	$(MAKE) -f CMakeFiles/obstacle_box_generator.dir/build.make CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o
-.PHONY : src/obstacle_box_generator.cpp.o
-
-src/obstacle_box_generator.i: src/obstacle_box_generator.cpp.i
-
-.PHONY : src/obstacle_box_generator.i
-
-# target to preprocess a source file
-src/obstacle_box_generator.cpp.i:
-	$(MAKE) -f CMakeFiles/obstacle_box_generator.dir/build.make CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.i
-.PHONY : src/obstacle_box_generator.cpp.i
-
-src/obstacle_box_generator.s: src/obstacle_box_generator.cpp.s
-
-.PHONY : src/obstacle_box_generator.s
-
-# target to generate assembly for a file
-src/obstacle_box_generator.cpp.s:
-	$(MAKE) -f CMakeFiles/obstacle_box_generator.dir/build.make CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.s
-.PHONY : src/obstacle_box_generator.cpp.s
-
 src/random_map_generator.o: src/random_map_generator.cpp.o
 
 .PHONY : src/random_map_generator.o
@@ -1263,33 +1158,6 @@ src/random_map_generator.cpp.s:
 	$(MAKE) -f CMakeFiles/random_map_generator.dir/build.make CMakeFiles/random_map_generator.dir/src/random_map_generator.cpp.s
 .PHONY : src/random_map_generator.cpp.s
 
-src/sfc_generator.o: src/sfc_generator.cpp.o
-
-.PHONY : src/sfc_generator.o
-
-# target to build an object file
-src/sfc_generator.cpp.o:
-	$(MAKE) -f CMakeFiles/sfc_generator.dir/build.make CMakeFiles/sfc_generator.dir/src/sfc_generator.cpp.o
-.PHONY : src/sfc_generator.cpp.o
-
-src/sfc_generator.i: src/sfc_generator.cpp.i
-
-.PHONY : src/sfc_generator.i
-
-# target to preprocess a source file
-src/sfc_generator.cpp.i:
-	$(MAKE) -f CMakeFiles/sfc_generator.dir/build.make CMakeFiles/sfc_generator.dir/src/sfc_generator.cpp.i
-.PHONY : src/sfc_generator.cpp.i
-
-src/sfc_generator.s: src/sfc_generator.cpp.s
-
-.PHONY : src/sfc_generator.s
-
-# target to generate assembly for a file
-src/sfc_generator.cpp.s:
-	$(MAKE) -f CMakeFiles/sfc_generator.dir/build.make CMakeFiles/sfc_generator.dir/src/sfc_generator.cpp.s
-.PHONY : src/sfc_generator.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1298,8 +1166,6 @@ help:
 	@echo "... depend"
 	@echo "... install/local"
 	@echo "... install"
-	@echo "... edit_cache"
-	@echo "... tf_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_eus"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_lisp"
@@ -1311,12 +1177,12 @@ help:
 	@echo "... actionlib_generate_messages_py"
 	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_eus"
+	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... octomap_msgs_generate_messages_lisp"
 	@echo "... install/strip"
 	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... octomap_msgs_generate_messages_py"
-	@echo "... rebuild_cache"
-	@echo "... tf_generate_messages_eus"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... nav_msgs_generate_messages_cpp"
@@ -1324,12 +1190,12 @@ help:
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_eus"
-	@echo "... obstacle_box_generator"
 	@echo "... rosgraph_msgs_generate_messages_eus"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... tf_generate_messages_lisp"
+	@echo "... edit_cache"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... tf_generate_messages_py"
@@ -1337,21 +1203,19 @@ help:
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... init_traj_generator"
+	@echo "... tf_generate_messages_cpp"
+	@echo "... blend"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_nodejs"
+	@echo "... tf_generate_messages_eus"
+	@echo "... rebuild_cache"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... octomap_msgs_generate_messages_cpp"
 	@echo "... octomap_msgs_generate_messages_eus"
-	@echo "... sfc_generator"
 	@echo "... octomap_msgs_generate_messages_nodejs"
 	@echo "... test"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... init_cond_publisher"
-	@echo "... a_star_epsilon"
 	@echo "... download_extra_data"
 	@echo "... std_msgs_generate_messages_eus"
-	@echo "... cbs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... clang-format"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -1359,14 +1223,12 @@ help:
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... ecbs"
 	@echo "... doxygen"
 	@echo "... run_tests"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... docs"
 	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... a_star"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
@@ -1379,21 +1241,15 @@ help:
 	@echo "... gmock"
 	@echo "... gtest"
 	@echo "... gtest_main"
-	@echo "... src/init_cond_publisher.o"
-	@echo "... src/init_cond_publisher.i"
-	@echo "... src/init_cond_publisher.s"
+	@echo "... src/blend.o"
+	@echo "... src/blend.i"
+	@echo "... src/blend.s"
 	@echo "... src/init_traj_generator.o"
 	@echo "... src/init_traj_generator.i"
 	@echo "... src/init_traj_generator.s"
-	@echo "... src/obstacle_box_generator.o"
-	@echo "... src/obstacle_box_generator.i"
-	@echo "... src/obstacle_box_generator.s"
 	@echo "... src/random_map_generator.o"
 	@echo "... src/random_map_generator.i"
 	@echo "... src/random_map_generator.s"
-	@echo "... src/sfc_generator.o"
-	@echo "... src/sfc_generator.i"
-	@echo "... src/sfc_generator.s"
 .PHONY : help
 
 

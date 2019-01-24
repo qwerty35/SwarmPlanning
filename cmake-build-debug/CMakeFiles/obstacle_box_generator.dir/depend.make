@@ -92,7 +92,10 @@ CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros
 CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/ros/wall_timer.h
 CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
+CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/std_msgs/ColorRGBA.h
 CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
+CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/visualization_msgs/Marker.h
+CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/visualization_msgs/MarkerArray.h
 CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
 CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h
 CMakeFiles/obstacle_box_generator.dir/src/obstacle_box_generator.cpp.o: /usr/include/x86_64-linux-gnu/bits/select.h

@@ -17,56 +17,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="a_star_epsilon">
-				<Option output="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs/a_star_epsilon" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 a_star_epsilon"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="a_star_epsilon/fast">
-				<Option output="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs/a_star_epsilon" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 a_star_epsilon/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="download_extra_data">
 				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs"/>
 				<Option type="4"/>
@@ -82,56 +32,6 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 std_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cbs">
-				<Option output="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs/cbs" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 cbs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="cbs/fast">
-				<Option output="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs/cbs" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 cbs/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
@@ -207,56 +107,6 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="ecbs">
-				<Option output="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs/ecbs" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 ecbs"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="ecbs/fast">
-				<Option output="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs/ecbs" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 ecbs/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="doxygen">
 				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs"/>
 				<Option type="4"/>
@@ -312,56 +162,6 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_eus"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="a_star">
-				<Option output="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs/a_star" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 a_star"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="a_star/fast">
-				<Option output="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs/a_star" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel/lib/ecbs"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
-					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 a_star/fast"/>
 					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/third_party/ecbs/Makefile&quot;  VERBOSE=1 clean"/>
@@ -672,18 +472,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/src/a_star.cpp">
-			<Option target="a_star"/>
-		</Unit>
-		<Unit filename="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/src/a_star_epsilon.cpp">
-			<Option target="a_star_epsilon"/>
-		</Unit>
-		<Unit filename="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/src/cbs.cpp">
-			<Option target="cbs"/>
-		</Unit>
-		<Unit filename="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/src/ecbs.cpp">
-			<Option target="ecbs"/>
-		</Unit>
 		<Unit filename="/usr/src/gmock/src/gmock-all.cc">
 			<Option target="gmock_main"/>
 			<Option target="gmock"/>

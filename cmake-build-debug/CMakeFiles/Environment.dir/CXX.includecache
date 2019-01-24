@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jungwon/catkin_ws/src/SwarmPlanning/src/Environment.cpp
+Environment.h
+/home/jungwon/catkin_ws/src/SwarmPlanning/src/Environment.h
+
+/home/jungwon/catkin_ws/src/SwarmPlanning/src/Environment.h
+

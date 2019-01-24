@@ -21,6 +21,9 @@ Doxygen build started
 --   program_options
 -- Boost version: 1.58.0
 -- Found the following Boost libraries:
+--   program_options
+-- Boost version: 1.58.0
+-- Found the following Boost libraries:
 --   system
 --   filesystem
 --   thread
@@ -73,9 +76,6 @@ but not all the files it references.
 -- looking for PCL_MODELER
 -- looking for PCL_IN_HAND_SCANNER
 -- looking for PCL_POINT_CLOUD_EDITOR
--- Boost version: 1.58.0
--- Found the following Boost libraries:
---   program_options
 -- Using CATKIN_DEVEL_PREFIX: /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug/devel
 -- Using CMAKE_PREFIX_PATH: /home/jungwon/catkin_ws/devel;/home/jungwon/catkin_ws2/devel;/opt/ros/kinetic
 -- This workspace overlays: /home/jungwon/catkin_ws/devel;/home/jungwon/catkin_ws2/devel;/opt/ros/kinetic
@@ -89,11 +89,7 @@ but not all the files it references.
 -- catkin 0.7.14
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 -- Configuring done
-WARNING: Target "obstacle_box_generator" requests linking to directory "/opt/ros/kinetic/include".  Targets may link only to libraries.  CMake is dropping the item.
-WARNING: Target "obstacle_box_generator" requests linking to directory "/opt/ros/kinetic/include".  Targets may link only to libraries.  CMake is dropping the item.
 WARNING: Target "init_traj_generator" requests linking to directory "/opt/ros/kinetic/include".  Targets may link only to libraries.  CMake is dropping the item.
 WARNING: Target "init_traj_generator" requests linking to directory "/opt/ros/kinetic/include".  Targets may link only to libraries.  CMake is dropping the item.
-WARNING: Target "sfc_generator" requests linking to directory "/opt/ros/kinetic/include".  Targets may link only to libraries.  CMake is dropping the item.
-WARNING: Target "sfc_generator" requests linking to directory "/opt/ros/kinetic/include".  Targets may link only to libraries.  CMake is dropping the item.
 -- Generating done
 -- Build files have been written to: /home/jungwon/catkin_ws/src/SwarmPlanning/cmake-build-debug
