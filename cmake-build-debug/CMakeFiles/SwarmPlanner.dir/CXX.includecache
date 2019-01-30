@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/SwarmPlanner.h
+
+/home/jungwon/catkin_ws/src/SwarmPlanning/src/SwarmPlanner.cpp
+SwarmPlanner.h
+/home/jungwon/catkin_ws/src/SwarmPlanning/src/SwarmPlanner.h
+

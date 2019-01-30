@@ -38,14 +38,15 @@ using libMultiRobotPlanning::PlanResult;
 
 class ECBSLauncher {
 public:
-    std::vector<std::vector<octomap::point3d>> init_traj;
-    nav_msgs::Path ecbs_path;
+    std::vector<std::vector<octomap::point3d>> ecbs_traj;
+    nav_msgs::Path msgs_ecbs_traj;
+    int makespan;
 
     ECBSLauncher(int _x_min, int _y_min, int _z_min,
                  int _x_max, int _y_max, int _z_max, /////////////////////////////////////int?????
                  double _ecbs_w, double _ecbs_xy_res, double _ecbs_z_res, double _ecbs_margin,
-                 const std::vector<octomap::point3d>& _start,
-                 const std::vector<octomap::point3d>& _goal,
+                 std::vector<octomap::point3d> _start,
+                 std::vector<octomap::point3d> _goal,
                  std::shared_ptr<octomap::OcTree> _octree_obj)
              : x_min(_x_min),
                y_min(_y_min),
@@ -81,7 +82,7 @@ public:
         if (success) {
             ROS_WARN("Planning successful! \n");
             int cost = 0;
-            int makespan = 0;
+            makespan = 0;
             for (const auto &s : solution) {
                 cost += s.cost;
                 makespan = std::max<int>(makespan, s.cost);
@@ -94,24 +95,24 @@ public:
             std::cout << "  highLevelExpanded: " << mapf.highLevelExpanded() << std::endl;
             std::cout << "  lowLevelExpanded: " << mapf.lowLevelExpanded() << std::endl;
 
-            init_traj.resize(solution.size());
+            ecbs_traj.resize(solution.size());
             for (size_t a = 0; a < solution.size(); ++a) {
                 geometry_msgs::PoseStamped sol;
                 sol.header.seq = a;
                 sol.pose.position.x = start.at(a).x();
                 sol.pose.position.y = start.at(a).y();
                 sol.pose.position.z = start.at(a).z();
-                ecbs_path.poses.push_back(sol);
+                msgs_ecbs_traj.poses.push_back(sol);
 
-                init_traj.at(a).emplace_back(octomap::point3d(start.at(a).x(), start.at(a).y(), start.at(a).z()));
+                ecbs_traj.at(a).emplace_back(octomap::point3d(start.at(a).x(), start.at(a).y(), start.at(a).z()));
 
                 for (const auto &state : solution[a].states) {
                     sol.pose.position.x = state.first.x * ecbs_xy_res + x_min;
                     sol.pose.position.y = state.first.y * ecbs_xy_res + y_min;
                     sol.pose.position.z = state.first.z * ecbs_z_res + z_min;
-                    ecbs_path.poses.push_back(sol);
+                    msgs_ecbs_traj.poses.push_back(sol);
 
-                    init_traj.at(a).emplace_back(octomap::point3d(state.first.x * ecbs_xy_res + x_min,
+                    ecbs_traj.at(a).emplace_back(octomap::point3d(state.first.x * ecbs_xy_res + x_min,
                                                                   state.first.y * ecbs_xy_res + y_min,
                                                                   state.first.z * ecbs_z_res + z_min));
                 }
@@ -119,9 +120,9 @@ public:
                 sol.pose.position.x = goal.at(a).x();
                 sol.pose.position.y = goal.at(a).y();
                 sol.pose.position.z = goal.at(a).z();
-                ecbs_path.poses.push_back(sol);
+                msgs_ecbs_traj.poses.push_back(sol);
 
-                init_traj.at(a).emplace_back(octomap::point3d(goal.at(a).x(), goal.at(a).y(), goal.at(a).z()));
+                ecbs_traj.at(a).emplace_back(octomap::point3d(goal.at(a).x(), goal.at(a).y(), goal.at(a).z()));
             }
         }
         else {

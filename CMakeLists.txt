@@ -40,7 +40,6 @@ set(CPLEX_INCLUDE_DIR     ${CPLEX_PREFIX_DIR}/cplex/include)
 set(CPLEX_LIBRARIES_DIR   ${CPLEX_PREFIX_DIR}/cplex/lib/x86-64_linux/static_pic)
 set(CONCERT_INCLUDE_DIR   ${CPLEX_PREFIX_DIR}/concert/include)
 set(CONCERT_LIBRARIES_DIR ${CPLEX_PREFIX_DIR}/concert/lib/x86-64_linux/static_pic)
-set(ILOCPLEX_INCLUDE_DIR  ${CPLEX_PREFIX_DIR}/)
 include_directories(${CPLEX_INCLUDE_DIR} ${CONCERT_INCLUDE_DIR})
 link_directories(${CPLEX_LIBRARIES_DIR} ${CONCERT_LIBRARIES_DIR})
 
@@ -63,6 +62,12 @@ add_executable(init_traj_generator src/init_traj_generator.cpp)
 target_link_libraries(init_traj_generator
   ${catkin_LIBRARIES}
   ${OCTOMAP_INCLUDE_DIRS}
+  m
+  ilocplex
+  cplex
+  concert
+  pthread
+  dl
 )
 
 add_executable(random_map_generator src/random_map_generator.cpp)
@@ -73,10 +78,11 @@ target_link_libraries(random_map_generator
 
 add_executable(blend src/blend.cpp)
 target_link_libraries(blend
-    m
-    ilocplex
-    cplex
-    concert
-    pthread
-    dl
+  m
+  ilocplex
+  cplex
+  concert
+  pthread
+  dl
 )
+

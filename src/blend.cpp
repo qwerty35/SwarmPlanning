@@ -1,5 +1,5 @@
 // -------------------------------------------------------------- -*- C++ -*-
-// File: blend.cpp
+// File: iloqpex3.cpp
 // Version 12.8.0
 // --------------------------------------------------------------------------
 // Licensed Materials - Property of IBM
@@ -11,154 +11,180 @@
 // IBM Corp.
 // --------------------------------------------------------------------------
 //
-// blend.cpp -- A blending problem
-
-/* ------------------------------------------------------------
-
-Problem Description
--------------------
-
-Goal is to blend four sources to produce an alloy: pure metal, raw
-materials, scrap, and ingots.
-
-Each source has a cost.
-Each source is made up of elements in different proportions.
-Alloy has minimum and maximum proportion of each element.
-
-Minimize cost of producing a requested quantity of alloy.
-
------------------------------------------------------------- */
-
+// iloqpex3.cpp - Entering and modifying a QP problem
+//
+// Example iloqpex3.cpp illustrates how to enter and modify a QP problem
+// by using linear quadratic expressions.
 
 #include <ilcplex/ilocplex.h>
 ILOSTLBEGIN
 
-IloInt nbElements, nbRaw, nbScrap, nbIngot;
-IloNum alloy;
-IloNumArray nm, nr, ns, ni, p, P;
+static void
+createQPModel (IloModel model, IloNumVarArray x, IloRangeArray c);
 
-IloNumArray2 PRaw, PScrap, PIngot;
+static void
+modifyQuadObjective(IloObjective obj, IloNumVarArray x) ;
 
+static void
+solveAndPrint(IloCplex cplex, IloNumVarArray var, char const *msg);
 
-void define_data(IloEnv env) {
-    nbElements = 3;
-    nbRaw      = 2;
-    nbScrap    = 2;
-    nbIngot    = 1;
-    alloy      = 71;
-    nm = IloNumArray(env, nbElements, 22.0, 10.0, 13.0);
-    nr = IloNumArray(env, nbRaw, 6.0, 5.0);
-    ns = IloNumArray(env, nbScrap, 7.0, 8.0);
-    ni = IloNumArray(env, nbIngot, 9.0);
-    p = IloNumArray(env, nbElements, 0.05, 0.30, 0.60);
-    P = IloNumArray(env, nbElements, 0.10, 0.40, 0.80);
-    PRaw   = IloNumArray2(env, nbElements);
-    PScrap = IloNumArray2(env, nbElements);
-    PIngot = IloNumArray2(env, nbElements);
-    PRaw[0] = IloNumArray(env, nbRaw, 0.20, 0.01);
-    PRaw[1] = IloNumArray(env, nbRaw, 0.05, 0.00);
-    PRaw[2] = IloNumArray(env, nbRaw, 0.05, 0.30);
-
-    PScrap[0] = IloNumArray(env, nbScrap, 0.00, 0.01);
-    PScrap[1] = IloNumArray(env, nbScrap, 0.60, 0.00);
-    PScrap[2] = IloNumArray(env, nbScrap, 0.40, 0.70);
-
-    PIngot[0] = IloNumArray(env, nbIngot, 0.10);
-    PIngot[1] = IloNumArray(env, nbIngot, 0.45);
-    PIngot[2] = IloNumArray(env, nbIngot, 0.45);
-}
+static void
+printObjective (IloObjective obj);
 
 int
-main(int, char**)
+main (int argc, char **argv)
 {
-    IloEnv env;
+    IloEnv   env;
     try {
-        IloInt j;
-
-        define_data(env);
-
+        // create a QP problem
         IloModel model(env);
+        IloNumVarArray var(env);
+        IloRangeArray con(env);
+        createQPModel (model, var, con);
 
-        IloNumVarArray m(env, nbElements, 0.0, IloInfinity);
-        IloNumVarArray r(env, nbRaw,   0.0, IloInfinity);
-        IloNumVarArray s(env, nbScrap, 0.0, IloInfinity);
-        IloNumVarArray i(env, nbIngot, 0.0, 100000);
-        IloNumVarArray e(env, nbElements);
-
-        // Objective Function: Minimize Cost
-        model.add(IloMinimize(env, IloScalProd(nm, m) + IloScalProd(nr, r) +
-                                   IloScalProd(ns, s) + IloScalProd(ni, i)  ));
-
-        // Min and max quantity of each element in alloy
-        for (j = 0; j < nbElements; j++) {
-            e[j] = IloNumVar(env, p[j] * alloy, P[j] * alloy);
-        }
-
-        // Constraint: produce requested quantity of alloy
-        model.add(IloSum(e) == alloy);
-
-        // Constraints: Satisfy element quantity requirements for alloy
-        for (j = 0; j < nbElements; j++) {
-            model.add(e[j] == m[j] + IloScalProd(PRaw[j], r)
-                              + IloScalProd(PScrap[j], s)
-                              + IloScalProd(PIngot[j], i));
-        }
-
-        // Optimize
         IloCplex cplex(model);
-        cplex.setOut(env.getNullStream());
-        cplex.setWarning(env.getNullStream());
-        cplex.solve();
+        cplex.exportModel("qp1ex3.lp");
 
-        if (cplex.getStatus() == IloAlgorithm::Infeasible)
-            env.out() << "No Solution" << endl;
+        // solve the QP problem
+        solveAndPrint(cplex, var, "Solving the QP problem ...");
 
-        env.out() << "Solution status: " << cplex.getStatus() << endl;
+        // Modify the quadratic objective function
+        modifyQuadObjective(cplex.getObjective(), var);
+        cplex.exportModel("qp2ex3.lp");
 
-        // Print results
-        env.out() << "Cost:" << cplex.getObjValue() << endl;
-        env.out() << "Pure metal:" << endl;
-        for(j = 0; j < nbElements; j++)
-            env.out() << j << ") " << cplex.getValue(m[j]) << endl;
-        env.out() << "Raw material:" << endl;
-        for(j = 0; j < nbRaw; j++)
-            env.out() << j << ") " << cplex.getValue(r[j]) << endl;
-        env.out() << "Scrap:" << endl;
-        for(j = 0; j < nbScrap; j++)
-            env.out() << j << ") " << cplex.getValue(s[j]) << endl;
-        env.out() << "Ingots : " << endl;
-        for(j = 0; j < nbIngot; j++)
-            env.out() << j << ") " << cplex.getValue(i[j]) << endl;
-        env.out() << "Elements:" << endl;
-        for(j = 0; j < nbElements; j++)
-            env.out() << j << ") " << cplex.getValue(e[j]) << endl;
+        // solve the modified QP problem
+        solveAndPrint(cplex, var, "Solving the modified QP problem ...");
     }
-    catch (IloException& ex) {
-        cerr << "Error: " << ex << endl;
+    catch (IloException& e) {
+        cerr << "Concert exception caught: " << e << endl;
     }
     catch (...) {
-        cerr << "Error" << endl;
+        cerr << "Unknown exception caught" << endl;
     }
-    env.end();
-    return 0;
-}
 
-/*
-Cost:653.554
-Pure metal:
-0) 0
-1) 0
-2) 0
-Raw material:
-0) 0
-1) 0
-Scrap:
-0) 17.059
-1) 30.2311
-Ingots :
-0) 32.4769
-Elements:
-0) 3.55
-1) 24.85
-2) 42.6
-*/
+    env.end();
+
+    return 0;
+}  // END main
+
+
+// Creating a simple QP problem
+static void
+createQPModel (IloModel model, IloNumVarArray x, IloRangeArray c)
+{
+    IloEnv env = model.getEnv();
+
+    x.add(IloNumVar(env, 0.0, 40.0,        "x0"));
+    x.add(IloNumVar(env, 0.0, IloInfinity, "x1"));
+    x.add(IloNumVar(env, 0.0, IloInfinity, "x2"));
+
+    // - x0 +   x1 + x2 <= 20
+    //   x0 - 3*x1 + x2 <= 30
+    c.add( - x[0] +     x[1] + x[2] <= 20);
+    c.add(   x[0] - 3 * x[1] + x[2] <= 30);
+    model.add(c);
+
+    // minimize - x0 - x1 - x2 + x0*x0 + x1*x1 + x0*x1 + x1*x0
+    IloInt i, j, nvars = x.getSize();
+    IloExpr objExpr(env);
+    for (i = 0; i < nvars; ++i) {
+        objExpr += -1.0*x[i];
+        for (j = 0; j < nvars; ++j) {
+            objExpr += 1.0*x[i]*x[j];
+        }
+    }
+    IloObjective obj = IloMinimize(env, objExpr);
+    model.add(obj);
+    objExpr.end();
+
+    // Print out the objective function
+    printObjective(obj);
+} // END createQPModel
+
+
+// Modifying all quadratic terms x[i]*x[j]
+// in the objective function.
+static void
+modifyQuadObjective(IloObjective obj, IloNumVarArray x)
+{
+    IloInt i, j;
+    IloInt ncols = x.getSize();
+
+    // Note that the quadratic expression in the objective
+    // is normalized: i.e., for all i != j, terms
+    // c(i,j)*x[i]*x[j] + c(j,i)*x[j]*x[i] are normalized as
+    // (c(i,j) + c(j,i)) * x[i]*x[j], or
+    // (c(i,j) + c(j,i)) * x[j]*x[i].
+    // Therefore you can only modify one of the terms
+    // x[i]*x[j] or x[j]*x[i].
+    // If you modify both x[i]*x[j] and x[j]*x[i], then
+    // the second modification will overwrite the first one.
+    for (i = 0; i < ncols; ++i) {
+        obj.setQuadCoef(x[i], x[i], i*i);
+        for (j = 0; j < i; ++j)
+            obj.setQuadCoef(x[i], x[j], -2.0*(i*j));
+    }
+
+    // Print out the objective function
+    printObjective(obj);
+} //END modifyQuadObjective
+
+
+// Solve the current model and print results
+static void
+solveAndPrint(IloCplex cplex, IloNumVarArray var, char const *msg)
+{
+    IloEnv env = var.getEnv();
+    env.out() << msg << endl;
+
+    if ( cplex.solve() ) {
+        env.out() << "Solution status = " << cplex.getStatus()   << endl;
+        env.out() << "Solution value  = " << cplex.getObjValue() << endl;
+
+        IloNumArray val(env);
+        cplex.getValues(val, var);
+        IloInt j, nvars = var.getSize();
+        for (j = 0; j < nvars; ++j) {
+            env.out() << "Variable " << j << ": Value = " << val[j] << endl;
+        }
+        val.end();
+    }
+    env.out() << endl;
+} // END solveAndPrint
+
+
+// Print out the objective function.
+// Note that the quadratic expression in the objective
+// is normalized: i.E., for all i != j, terms
+// c(i,j)*x[i]*x[j] + c(j,i)*x[j]*x[i] is normalized as
+// (c(i,j) + c(j,i)) * x[i]*x[j], or
+// (c(i,j) + c(j,i)) * x[j]*x[i].
+static void
+printObjective (IloObjective obj)
+{
+    IloEnv env = obj.getEnv();
+
+    env.out() << "obj: " << obj << endl;
+
+    // Count the number of linear terms
+    // in the objective function.
+    IloInt nlinterms = 0;
+    for (IloExpr::LinearIterator lit = obj.getLinearIterator(); lit.ok(); ++lit) {
+        ++nlinterms;
+    }
+
+    // Count the number of quadratic terms
+    // in the objective function.
+    IloInt nquadterms = 0;
+    IloInt nquaddiag  = 0;
+    for (IloExpr::QuadIterator qit = obj.getQuadIterator(); qit.ok(); ++qit) {
+        ++nquadterms;
+        if ( qit.getVar1().getImpl() == qit.getVar2().getImpl() )
+            ++nquaddiag;
+    }
+
+    env.out() << "number of linear terms in the objective             : " << nlinterms  << endl;
+    env.out() << "number of quadratic terms in the objective          : " << nquadterms << endl;
+    env.out() << "number of diagonal quadratic terms in the objective : " << nquaddiag  << endl;
+    env.out() << endl;
+} // END printObjective

@@ -27,7 +27,6 @@
 #include <octomap/OcTree.h>
 #include <dynamicEDT3D/dynamicEDTOctomap.h>
 
-
 using libMultiRobotPlanning::ECBS;
 using libMultiRobotPlanning::Neighbor;
 using libMultiRobotPlanning::PlanResult;
@@ -105,6 +104,8 @@ int main(int argc, char* argv[]) {
     double x_size, y_size, z_size;
     double ecbs_w, ecbs_xy_res, ecbs_z_res, ecbs_margin;
     double box_xy_res, box_z_res, box_margin;
+    double plan_time_step, plan_downwash;
+    int plan_Npoly, plan_n;
 
     n.param<double>("world/x_size", x_size, 12);
     n.param<double>("world/y_size", y_size, 12);
@@ -119,6 +120,12 @@ int main(int argc, char* argv[]) {
     n.param<double>("box/z_res", box_z_res, 0.1);
     n.param<double>("box/margin", box_margin, 0.4);
 
+    n.param<double>("plan/time_step", plan_time_step, 1);
+    n.param<double>("plan/downwash", plan_downwash, 2.5);
+    n.param<int>("plan/Npoly", plan_Npoly, 5);
+    n.param<int>("plan/n", plan_n, 3);
+
+
     x_min = floor(-x_size/2);
     y_min = floor(-y_size/2);
     z_min = 0;
@@ -128,6 +135,7 @@ int main(int argc, char* argv[]) {
 
     geometry_msgs::PoseArray init_poses;
     std::vector<octomap::point3d> start, goal;
+    std::vector<double> quad_size;
     int input_size = 7;
     if (args.size() == 1 || args.size() % input_size != 1){
         ROS_WARN("Usage: init_traj_publisher <x_start> <y_start> <z_start> <x_goal> <y_goal> <z_goal> <quad_size> ... \n");
@@ -143,17 +151,18 @@ int main(int argc, char* argv[]) {
             init_pose.orientation.y = std::stof(args.at(i+5));
             init_pose.orientation.z = std::stof(args.at(i+6));
             init_pose.orientation.w = std::stof(args.at(i+7));
-
             init_poses.poses.push_back(init_pose);
 
             start.emplace_back(octomap::point3d(std::stof(args.at(i+1)), std::stof(args.at(i+2)), std::stof(args.at(i+3))));
             goal.emplace_back(octomap::point3d(std::stof(args.at(i+4)), std::stof(args.at(i+5)), std::stof(args.at(i+6))));
+            quad_size.emplace_back(std::stof(args.at(i+7)));
         }
     }
 
     ros::Rate rate(20);
     std::shared_ptr<ECBSLauncher> ecbs_launcher;
     std::shared_ptr<BoxGenerator> box_generator;
+    std::shared_ptr<SwarmPlanner> swarm_planner;
     while (ros::ok()) {
         if (has_octomap && !has_path) {
             ROS_INFO("Launch ECBS");
@@ -165,16 +174,23 @@ int main(int argc, char* argv[]) {
             ROS_INFO("Generate obstacle box");
             box_generator.reset(new BoxGenerator(x_min, y_min, z_min, x_max, y_max, z_max,
                                                  box_xy_res, box_z_res, box_margin,
-                                                 ecbs_xy_res, ecbs_z_res,
-                                                 octree_obj, ecbs_launcher.get()->init_traj));
+                                                 ecbs_xy_res, ecbs_z_res, ecbs_launcher.get()->makespan,
+                                                 ecbs_launcher.get()->ecbs_traj, plan_time_step, octree_obj));
             box_generator.get()->update();
+
+            ROS_INFO("Optimize swarm trajectory");
+            swarm_planner.reset(new SwarmPlanner(start, goal, quad_size, plan_Npoly, plan_n, plan_downwash,
+                                                 box_generator.get()->obstacle_boxes,
+                                                 box_generator.get()->relative_boxes,
+                                                 box_generator.get()->ts_each, box_generator.get()->ts_total));
+            swarm_planner.get()->update();
+
             has_path = true;
         }
         if (has_path) {
             init_poses_pub.publish(init_poses);
-            ecbs_path_pub.publish(ecbs_launcher.get()->ecbs_path);
+            ecbs_path_pub.publish(ecbs_launcher.get()->msgs_ecbs_traj);
             obsbox_pub.publish(box_generator.get()->msgs_obstacle_boxes);
-
             visObsbox(n, obsbox_vis_pubs, box_generator.get()->obstacle_boxes);
         }
         ros::spinOnce();
