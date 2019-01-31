@@ -99,6 +99,7 @@ private:
     }
 
     void solveQP(const IloEnv& env){
+        IloNum total_cost = 0;
         for(int k = 0; k < 3; k++) {
             IloModel model(env);
             IloNumVarArray var(env);
@@ -116,7 +117,8 @@ private:
 
             IloNumArray vals(env);
             env.out() << "QP Solution status = " << cplex.getStatus() << endl;
-            env.out() << "QP Solution value  = " << cplex.getObjValue() << endl;
+//            env.out() << "QP Solution value  = " << cplex.getObjValue() << endl;
+            total_cost += cplex.getObjValue();
             cplex.getValues(vals, var);
 
             // Translate Bernstein basis to Polynomial coefficients
@@ -136,6 +138,7 @@ private:
                 }
             }
         }
+        env.out() << "QP total cost  = " << total_cost << endl;
     }
 
     void createMsg(){
@@ -309,12 +312,14 @@ private:
         int iter = 0;
         for (int qi = 0; qi < qn; qi++) {
             for (int qj = qi + 1; qj < qn; qj++) {
-                Alq_rel.block((N+1)*M*2*iter, (N+1)*M*qi, (N+1)*M, (N+1)*M) = -Eigen::MatrixXd::Identity((N+1)*M, (N+1)*M);
-                Alq_rel.block((N+1)*M*2*iter, (N+1)*M*qj, (N+1)*M, (N+1)*M) = Eigen::MatrixXd::Identity((N+1)*M, (N+1)*M);
-
-                Alq_rel.block((N+1)*M*(2*iter+1), (N+1)*M*qi, (N+1)*M, (N+1)*M) = Eigen::MatrixXd::Identity((N+1)*M, (N+1)*M);
-                Alq_rel.block((N+1)*M*(2*iter+1), (N+1)*M*qj, (N+1)*M, (N+1)*M) = -Eigen::MatrixXd::Identity((N+1)*M, (N+1)*M);
-
+                Alq_rel.block((N+1)*M*2*iter, (N+1)*M*qi, (N+1)*M, (N+1)*M) =
+                        -Eigen::MatrixXd::Identity((N+1)*M, (N+1)*M);
+                Alq_rel.block((N+1)*M*2*iter, (N+1)*M*qj, (N+1)*M, (N+1)*M) =
+                        Eigen::MatrixXd::Identity((N+1)*M, (N+1)*M);
+                Alq_rel.block((N+1)*M*(2*iter+1), (N+1)*M*qi, (N+1)*M, (N+1)*M) =
+                        Eigen::MatrixXd::Identity((N+1)*M, (N+1)*M);
+                Alq_rel.block((N+1)*M*(2*iter+1), (N+1)*M*qj, (N+1)*M, (N+1)*M) =
+                        -Eigen::MatrixXd::Identity((N+1)*M, (N+1)*M);
                 iter++;
             }
         }
@@ -346,14 +351,20 @@ private:
                     bi++;
                 }
 
-                d_upper.block((N+1)*m, 0, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, obstacle_boxes[qi][bi].second.x());
-                d_lower.block((N+1)*m, 0, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, -obstacle_boxes[qi][bi].first.x());
+                d_upper.block((N+1)*m, 0, N+1, 1) =
+                        Eigen::MatrixXd::Constant(N+1, 1, obstacle_boxes[qi][bi].second.x());
+                d_lower.block((N+1)*m, 0, N+1, 1) =
+                        Eigen::MatrixXd::Constant(N+1, 1, -obstacle_boxes[qi][bi].first.x());
 
-                d_upper.block((N+1)*m, 1, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, obstacle_boxes[qi][bi].second.y());
-                d_lower.block((N+1)*m, 1, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, -obstacle_boxes[qi][bi].first.y());
+                d_upper.block((N+1)*m, 1, N+1, 1) =
+                        Eigen::MatrixXd::Constant(N+1, 1, obstacle_boxes[qi][bi].second.y());
+                d_lower.block((N+1)*m, 1, N+1, 1) =
+                        Eigen::MatrixXd::Constant(N+1, 1, -obstacle_boxes[qi][bi].first.y());
 
-                d_upper.block((N+1)*m, 2, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, obstacle_boxes[qi][bi].second.z());
-                d_lower.block((N+1)*m, 2, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, -obstacle_boxes[qi][bi].first.z());
+                d_upper.block((N+1)*m, 2, N+1, 1) =
+                        Eigen::MatrixXd::Constant(N+1, 1, obstacle_boxes[qi][bi].second.z());
+                d_lower.block((N+1)*m, 2, N+1, 1) =
+                        Eigen::MatrixXd::Constant(N+1, 1, -obstacle_boxes[qi][bi].first.z());
             }
 
             int dlq_box_rows = d_upper.rows()+d_lower.rows();
@@ -379,18 +390,22 @@ private:
                     int sector = relative_boxes[qi][qj][ri].first;
                     switch(sector){
                         case -3:
-                            d_upper.block((N+1)*m, abs(sector)-1, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, -margin*plan_downwash);
+                            d_upper.block((N+1)*m, abs(sector)-1, N+1, 1) =
+                                    Eigen::MatrixXd::Constant(N+1, 1, -margin*plan_downwash);
                             break;
                         case -2:
                         case -1:
-                            d_upper.block((N+1)*m, abs(sector)-1, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, -margin);
+                            d_upper.block((N+1)*m, abs(sector)-1, N+1, 1) =
+                                    Eigen::MatrixXd::Constant(N+1, 1, -margin);
                             break;
                         case 1:
                         case 2:
-                            d_lower.block((N+1)*m, abs(sector)-1, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, -margin);
+                            d_lower.block((N+1)*m, abs(sector)-1, N+1, 1) =
+                                    Eigen::MatrixXd::Constant(N+1, 1, -margin);
                             break;
                         case 3:
-                            d_lower.block((N+1)*m, abs(sector)-1, N+1, 1) = Eigen::MatrixXd::Constant(N+1, 1, -margin*plan_downwash);
+                            d_lower.block((N+1)*m, abs(sector)-1, N+1, 1) =
+                                    Eigen::MatrixXd::Constant(N+1, 1, -margin*plan_downwash);
                             break;
                         default:
                             std::cerr << "invalid relative obstacle" << std::endl;

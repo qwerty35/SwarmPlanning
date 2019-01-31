@@ -57,7 +57,7 @@ public:
         distmap_obj.reset(new DynamicEDTOctomap(maxDist, _octree_obj.get(), min_point3d, max_point3d, false));
         distmap_obj.get()->update();
 
-        total_time = (_ecbs_makespan+2+2) * plan_time_step; // +2 : start, goal point +2 : matlab error???????????????????????????
+        total_time = (_ecbs_makespan+2) * plan_time_step; // +2 : start, goal point +2 : matlab error???????????????????????????
         qn = ecbs_traj.size();
     }
 
@@ -103,7 +103,9 @@ private:
         return false;
     }
 
-    bool isPointInBox(const octomap::point3d& point, const octomap::point3d& min_box_pt, const octomap::point3d& max_box_pt){
+    bool isPointInBox(const octomap::point3d& point,
+                      const octomap::point3d& min_box_pt,
+                      const octomap::point3d& max_box_pt){
         if(point.x() >= min_box_pt.x() && point.y() >= min_box_pt.y() && point.z() >= min_box_pt.z() &&
            point.x() <= max_box_pt.x() && point.y() <= max_box_pt.y() && point.z() <= max_box_pt.z()){
             return true;
@@ -162,13 +164,7 @@ private:
                 }
             }
         }
-
-        //for (int axis = 0; axis < 3; axis++) {
-            //min_box_pt(axis) = min_box_pt(axis) + margin;
-            //max_box_pt(axis) = max_box_pt(axis) - margin;
-        //}
     }
-
 
     void updateObsBox(){
         octomap::point3d min_prev_pt(0,0,0);
@@ -268,7 +264,7 @@ private:
                     while(path_iter+count < path_max && box_log(box_iter, path_iter+count) > 0){
                         count++;
                     }
-                    ts.emplace_back(floor(path_iter+count/2.0)+1);////////////////////////////////////////////////////////////???????????????????
+                    ts.emplace_back(floor(path_iter+count/2.0)+1);////////////////////////////////////////////////////////////matlab 기준
                 }
             }
 
@@ -323,7 +319,8 @@ private:
                         dy = round((ecbs_traj[qj][path_min-1].y()-ecbs_traj[qi][iter].y())/ecbs_xy_res);
                         dz = round((ecbs_traj[qj][path_min-1].z()-ecbs_traj[qi][iter].z())/ecbs_z_res);
                     }
-                    rel_pose[1] = (dx>num_err)-(dx<-num_err); //Caution: (q1_size+q2_size)/grid_size should be small enough!
+                    // Caution: (q1_size+q2_size)/grid_size should be small enough!
+                    rel_pose[1] = (dx>num_err)-(dx<-num_err);
                     rel_pose[2] = (dy>num_err)-(dy<-num_err);
                     rel_pose[3] = (dz>num_err)-(dz<-num_err);
 
@@ -341,9 +338,6 @@ private:
                         }
                     }
                 }
-
-//                std::cout << sector_log << std::endl;
-
 
                 //find minimum jump sector path (heuristic greedy search)
                 int iter = path_max-1;
@@ -389,11 +383,13 @@ private:
                     }
 
                     if(count == 0){
-                        relative_boxes[qi][qj].emplace_back(std::make_pair(sector_range[sector_curr], (iter+1)*plan_time_step));/////////////////////////
+                        relative_boxes[qi][qj].emplace_back(
+                                std::make_pair(sector_range[sector_curr], (iter+1)*plan_time_step));/////////////////////////////////////////////////////matlab 기준
                         ts_total_int.emplace_back(iter+1);///////////////////////////////////////////////////////////////////////////////////////////////
                     }
                     else{
-                        relative_boxes[qi][qj].emplace_back(std::make_pair(sector_range[sector_curr], (floor(iter+count/2.0)+1)*plan_time_step));////////
+                        relative_boxes[qi][qj].emplace_back(
+                                std::make_pair(sector_range[sector_curr], (floor(iter+count/2.0)+1)*plan_time_step));////////////////////////////////////
                         ts_total_int.emplace_back(floor(iter+count/2.0)+1);//////////////////////////////////////////////////////////////////////////////
                     }
                     sector_next = sector_curr;
