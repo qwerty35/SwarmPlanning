@@ -93,7 +93,7 @@ private:
     void buildConstMtx(){
         build_Q();
         build_Aeq();
-        build_Alq();
+//        build_Alq();
         build_deq();
         build_dlq();
     }
@@ -433,13 +433,28 @@ private:
         }
 
         IloNumExpr cost(env);
-        for(int i = 0; i < Q.rows(); i++){
-            for(int j = 0; j < Q.cols(); j++){
-                if(Q(i, j) != 0) {
-                    cost += Q(i, j) * x[i] * x[j];
+//        // Constraint Matrix version
+//        for (int i = 0; i < Q.rows(); i++) {
+//            for (int j = 0; j < Q.cols(); j++) {
+//                if (Q(i, j) != 0) {
+//                    cost += Q(i, j) * x[i] * x[j];
+//                }
+//            }
+//        }
+        for(int qi = 0; qi < qn; qi++) {
+            for (int m = 0; m < M; m++) {
+                for (int i = 0; i < N + 1; i++) {
+                    for (int j = 0; j < N + 1; j++) {
+                        int row = (N+1)*M*qi + (N+1)*m + i;
+                        int col = (N+1)*M*qi + (N+1)*m + j;
+                        if (Q(row, col) != 0) {
+                            cost += Q(row, col) * x[row] * x[col];
+                        }
+                    }
                 }
             }
         }
+
         model.add(IloMinimize(env, cost));
 
         for(int i = 0; i < Aeq.rows(); i++){
@@ -454,15 +469,33 @@ private:
             expr.end();
         }
 
-        for(int i = 0; i < Alq.rows(); i++){
-            IloNumExpr expr(env);
-            for(int j = 0; j < Alq.cols(); j++){
-                if(Alq(i, j) != 0) {
-                    expr += Alq(i, j) * x[j];
-                }
+//        // Constraint Matrix version
+//        for(int i = 0; i < Alq.rows(); i++){
+//            IloNumExpr expr(env);
+//            for(int j = 0; j < Alq.cols(); j++){
+//                if(Alq(i, j) != 0) {
+//                    expr += Alq(i, j) * x[j];
+//                }
+//            }
+//            c.add(expr <= dlq(i,k));
+//            expr.end();
+//        }
+        for(int qi = 0; qi < qn; qi++){
+            for(int j = 0; j < (N+1)*M; j++){
+                c.add(x[qi*(N+1)*M + j] <= dlq((N+1)*M*2*qi + j, k));
+                c.add(-x[qi*(N+1)*M + j] <= dlq((N+1)*M*(2*qi+1) + j, k));
             }
-            c.add(expr <= dlq(i,k));
-            expr.end();
+        }
+        int offset = qn*2*(N+1)*M;
+        int iter = 0;
+        for(int qi = 0; qi < qn; qi++){
+            for(int qj = qi+1; qj < qn; qj++){
+                for(int j = 0; j < (N+1)*M; j++){
+                    c.add(-x[qi*(N+1)*M + j] + x[qj*(N+1)*M + j] <= dlq(offset + (N+1)*M*2*iter + j, k));
+                    c.add(x[qi*(N+1)*M + j] - x[qj*(N+1)*M + j] <= dlq(offset + (N+1)*M*(2*iter+1) + j, k));
+                }
+                iter++;
+            }
         }
 
         model.add(c);

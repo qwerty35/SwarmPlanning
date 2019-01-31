@@ -82,10 +82,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0ce82f3-b4e7-4017-88fe-53b1694301e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/BoxGenerator.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/BoxGenerator.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/SwarmPlanner.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/SwarmPlanner.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/launch/rviz_config/config_8agents.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/launch/rviz_config/config_8agents.rviz" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -179,7 +176,7 @@
         <counts>
           <entry key="cpp" value="6135" />
           <entry key="h" value="229" />
-          <entry key="hpp" value="25006" />
+          <entry key="hpp" value="25850" />
           <entry key="mm" value="287" />
           <entry key="txt" value="830" />
         </counts>
@@ -187,7 +184,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CMakeLists.txt" value="830" />
-          <entry key="ObjectiveC" value="31657" />
+          <entry key="ObjectiveC" value="32501" />
         </counts>
       </usages-collector>
     </session>
@@ -198,7 +195,7 @@
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -228,7 +225,7 @@
         <entry file="file://$PROJECT_DIR$/include/BoxGenerator.hpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+              <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
               <folding>
                 <element signature="e#57#75#0" expanded="true" />
               </folding>
@@ -239,8 +236,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/SwarmPlanner.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="120" column="46" lean-forward="true" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+            <state relative-caret-position="455">
+              <caret line="499" column="8" selection-start-line="499" selection-start-column="8" selection-end-line="499" selection-end-column="8" />
               <folding>
                 <element signature="e#15#33#0" expanded="true" />
               </folding>
@@ -862,12 +859,12 @@
       <workItem from="1548670378011" duration="10605000" />
       <workItem from="1548728717775" duration="57229000" />
       <workItem from="1548917289165" duration="3984000" />
-      <workItem from="1548942198856" duration="578000" />
+      <workItem from="1548942198856" duration="7375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220688000" />
+    <option name="totallyTimeSpent" value="227485000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -882,7 +879,7 @@
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24681793" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24681793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -893,7 +890,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4997233" weight="0.32984293" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.5849474" weight="0.29633507" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" sideWeight="0.5849474" visible="true" weight="0.29633507" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5002767" side_tool="true" weight="0.3748691" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -1248,7 +1245,7 @@
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1272,7 +1269,7 @@
     <entry file="file://$PROJECT_DIR$/include/BoxGenerator.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="51" column="46" lean-forward="true" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
+          <caret line="51" column="46" selection-start-line="51" selection-start-column="46" selection-end-line="51" selection-end-column="46" />
           <folding>
             <element signature="e#57#75#0" expanded="true" />
           </folding>
@@ -1281,8 +1278,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/SwarmPlanner.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="120" column="46" lean-forward="true" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
+        <state relative-caret-position="455">
+          <caret line="499" column="8" selection-start-line="499" selection-start-column="8" selection-end-line="499" selection-end-column="8" />
           <folding>
             <element signature="e#15#33#0" expanded="true" />
           </folding>
