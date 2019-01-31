@@ -1,6 +1,3 @@
-//
-// Created by jungwon on 19. 1. 21.
-//
 
 #pragma once
 
@@ -14,11 +11,16 @@
 
 #include <octomap/OcTree.h>
 
+#include <std_msgs/Float64MultiArray.h>
+#include <std_msgs/MultiArrayDimension.h>
+
 #include <ilcplex/ilocplex.h>
 ILOSTLBEGIN
 
 class SwarmPlanner {
 public:
+    std_msgs::Float64MultiArray msgs_traj_info;
+    std::vector<std_msgs::Float64MultiArray> msgs_traj_coef;
     SwarmPlanner(const std::vector<octomap::point3d>& _start,
                  const std::vector<octomap::point3d>& _goal,
                  const std::vector<double>& _quad_size,
@@ -44,51 +46,21 @@ public:
     }
 
     void update(){
-        IloEnv   env;
+        IloEnv env;
+        Timer timer;
+
+        coef.resize(qn);
+
         try {
-            Timer timer;
             timer.reset();
-            updateConstraints();
+            buildConstMtx();
             timer.stop();
-            std::cout << "Building ConstMatrix success!" << std::endl;
             std::cout << "Building ConstMatrix runtime: " << timer.elapsedSeconds() << std::endl;
 
-
-            for(int k = 0; k < 3; k++) {
-                IloModel model(env);
-                IloNumVarArray var(env);
-                IloRangeArray con(env);
-
-                populatebyrow(model, var, con, k);
-
-                timer.reset();
-                IloCplex cplex(model);
-
-//                cplex.exportModel("/home/jungwon/catkin_ws/src/SwarmPlanning/debug/qpex1.lp");
-
-                // Optimize the problem and obtain solution.
-                if (!cplex.solve()) {
-                    env.error() << "Failed to optimize QP" << endl;
-                    throw (-1);
-                }
-
-                IloNumArray vals(env);
-//                env.out() << "QP Solution status = " << cplex.getStatus() << endl;
-                env.out() << "QP Solution value  = " << cplex.getObjValue() << endl;
-//            cplex.getValues(vals, var);
-//            env.out() << "Values        = " << vals << endl;
-//            cplex.getSlacks(vals, con);
-//            env.out() << "Slacks        = " << vals << endl;
-//            cplex.getDuals(vals, con);
-//            env.out() << "Duals         = " << vals << endl;
-//            cplex.getReducedCosts(vals, var);
-//            env.out() << "Reduced Costs = " << vals << endl;
-//
-//                cplex.exportModel("qpex1.lp");
-
-                timer.stop();
-                std::cout << "solve: " << timer.elapsedSeconds() << std::endl;
-            }
+            timer.reset();
+            solveQP(env);
+            timer.stop();
+            std::cout << "QP solve runtime: : " << timer.elapsedSeconds() << std::endl;
 
         }
         catch (IloException& e) {
@@ -98,11 +70,12 @@ public:
             cerr << "Unknown exception caught" << endl;
         }
         env.end();
+
+
+        createMsg();
     }
 
 private:
-    // std::shared_ptr<Eigen::MatrixXd> Q_obj, Aeq_obj, Alq_obj, deq_obj, dlq_obj;
-    Eigen::MatrixXd Q, Aeq, Alq, deq, dlq;
     std::vector<octomap::point3d> start;
     std::vector<octomap::point3d> goal;
     std::vector<double> quad_size;
@@ -110,70 +83,14 @@ private:
     std::vector<std::vector<std::vector<std::pair<int, double>>>> relative_boxes;
     std::vector<std::vector<double>> ts_each;
     std::vector<double> ts_total;
-    int N, n, M, qn, outdim;
     double plan_downwash;
 
-    void populatebyrow (IloModel model, IloNumVarArray x, IloRangeArray c, int k) {
-        Timer timer;
-        timer.reset();
-        IloEnv env = model.getEnv();
+    // std::shared_ptr<Eigen::MatrixXd> Q_obj, Aeq_obj, Alq_obj, deq_obj, dlq_obj;
+    Eigen::MatrixXd Q, Aeq, Alq, deq, dlq, basis;
+    std::vector<std::vector<double>> coef;
+    int N, n, M, qn, outdim;
 
-        for(int i = 0; i < Q.rows(); i++) {
-            x.add(IloNumVar(env, -IloInfinity, IloInfinity));
-        }
-        timer.stop();
-        std::cout << "1: " << timer.elapsedSeconds() << std::endl;
-
-        timer.reset();
-        IloNumExpr cost(env);
-        for(int i = 0; i < Q.rows(); i++){
-            for(int j = 0; j < Q.cols(); j++){
-                if(Q(i, j) != 0) {
-                    cost += Q(i, j) * x[i] * x[j];
-                }
-            }
-        }
-        model.add(IloMinimize(env, cost));
-        timer.stop();
-        std::cout << "2: " << timer.elapsedSeconds() << std::endl;
-
-        timer.reset();
-        for(int i = 0; i < Aeq.rows(); i++){
-            int count = 0;
-            IloNumExpr expr(env);
-            for(int j = 0; j < Aeq.cols(); j++){
-                if(Aeq(i, j) != 0) {
-                    expr += Aeq(i, j) * x[j];
-                }
-            }
-            c.add(expr == deq(i,k));
-            expr.end();
-        }
-        timer.stop();
-        std::cout << "3: " << timer.elapsedSeconds() << std::endl;
-
-        timer.reset();
-        int cccc = 1;
-        for(int i = 0; i < Alq.rows(); i++){
-            IloNumExpr expr(env);
-            for(int j = 0; j < Alq.cols(); j++){
-                if(Alq(i, j) != 0) {
-                    expr += Alq(i, j) * x[j];
-                }
-            }
-            c.add(expr <= dlq(i,k));
-            expr.end();
-        }
-        timer.stop();
-        std::cout << "4: " << timer.elapsedSeconds() << std::endl;
-
-        timer.reset();
-        model.add(c);
-        timer.stop();
-        std::cout << "5: " << timer.elapsedSeconds() << std::endl;
-    }  // END populatebyrow
-
-    void updateConstraints(){
+    void buildConstMtx(){
         build_Q();
         build_Aeq();
         build_Alq();
@@ -181,11 +98,73 @@ private:
         build_dlq();
     }
 
-    // Build cost matrix Q
+    void solveQP(const IloEnv& env){
+        for(int k = 0; k < 3; k++) {
+            IloModel model(env);
+            IloNumVarArray var(env);
+            IloRangeArray con(env);
+
+            populatebyrow(model, var, con, k);
+
+            IloCplex cplex(model);
+
+            // Optimize the problem and obtain solution.
+            if (!cplex.solve()) {
+                env.error() << "Failed to optimize QP" << endl;
+                throw (-1);
+            }
+
+            IloNumArray vals(env);
+            env.out() << "QP Solution status = " << cplex.getStatus() << endl;
+            env.out() << "QP Solution value  = " << cplex.getObjValue() << endl;
+            cplex.getValues(vals, var);
+
+            // Translate Bernstein basis to Polynomial coefficients
+            for(int qi = 0; qi < qn; qi++){
+                coef[qi].resize((N+1)*M*outdim);
+
+                for(int m = 0; m < M; m++){
+                    Eigen::MatrixXd c = Eigen::MatrixXd::Zero(1, N+1);
+                    Eigen::MatrixXd tm;
+                    timeMatrix(1.0/(ts_total[m+1] - ts_total[m]), tm);
+                    tm = basis * tm;
+                    for(int i = 0; i < N+1; i++){
+                        c = c + vals[qi*(N+1)*M + (N+1)*m + i] * tm.row(i);
+                    }
+                    std::vector<double> c_temp(c.data(), c.data()+c.size());
+                    coef[qi].insert(coef[qi].begin() + (N+1)*M*k + (N+1)*m, c_temp.begin(), c_temp.end());
+                }
+            }
+        }
+    }
+
+    void createMsg(){
+        std::vector<double> traj_info;
+        traj_info.emplace_back(qn);
+        traj_info.emplace_back(N);
+        traj_info.insert(traj_info.end(), ts_total.begin(), ts_total.end());
+        msgs_traj_info.data = traj_info;
+
+        msgs_traj_coef.resize(qn);
+        for(int qi = 0; qi < qn; qi++) {
+            std_msgs::MultiArrayDimension rows;
+            rows.size = (N + 1) * M;
+            msgs_traj_coef[qi].layout.dim.emplace_back(rows);
+
+            std_msgs::MultiArrayDimension cols;
+            cols.size = outdim;
+            msgs_traj_coef[qi].layout.dim.emplace_back(cols);
+
+            msgs_traj_coef[qi].data.insert(msgs_traj_coef[qi].data.end(), coef[qi].begin(), coef[qi].end());
+        }
+    }
+
+    // Cost matrix Q
     void build_Q() {
 //        Q_obj.reset(new Eigen::MatrixXd(qn * M*(N+1), qn * M*(N+1)));
 //        Q_obj->setZero();
         Q = Eigen::MatrixXd::Zero(qn * M*(N+1), qn * M*(N+1));
+        basis = Eigen::MatrixXd::Zero(N+1, N+1);
         Eigen::MatrixXd Q_p = Eigen::MatrixXd::Zero(M*(N+1), M*(N+1));
         Eigen::MatrixXd Q_pp = Eigen::MatrixXd::Zero(N+1, N+1);
         if (n == 3 && N == 5) {
@@ -195,6 +174,13 @@ private:
                         0,     0, -1200,  3600, -3600,  1200,
                         0,   600,     0, -3600,  4800, -1800,
                      -120,     0,     0,  1200, -1800,   720;
+
+            basis <<   -1,     5,   -10,    10,    -5,     1,
+                        5,   -20,    30,   -20,     5,     0,
+                      -10,    30,   -30,    10,     0,     0,
+                       10,   -20,    10,     0,     0,     0,
+                       -5,     5,     0,     0,     0,     0,
+                        1,     0,     0,     0,     0,     0;
         } else {
             std::cerr << "TODO: debug when Npoly is not 5" << std::endl;
         }
@@ -206,17 +192,9 @@ private:
 //            Q_obj->block(qi*M*(N+1), qi*M*(N+1), M*(N+1), M*(N+1)) = Q_p;
             Q.block(qi*M*(N+1), qi*M*(N+1), M*(N+1), M*(N+1)) = Q_p;
         }
-//        std::ofstream file("/home/jungwon/catkin_ws/src/SwarmPlanning/debug/Q.txt");
-//        if (file.is_open())
-//        {
-//            file << Q << '\n';
-//        }
-//        file.close();
     }
 
-    //                                         //
-    // Equality Constraints Mapping Matrix Aeq //
-    //                                         //
+    // Equality constraints mapping matrix Aeq
     void build_Aeq() {
 //        Aeq_obj.reset(new Eigen::MatrixXd(qn * (2*n + (M-1)*n), qn * (N+1)*M));
 //        Aeq_obj->setZero();
@@ -234,6 +212,7 @@ private:
                    -1,  3, -3,  1,  0,  0,
                     1, -4,  6, -4,  1,  0,
                    -1,  5,-10, 10, -5,  1;
+
             A_T <<  0,  0,  0,  0,  0,  1,
                     0,  0,  0,  0, -1,  1,
                     0,  0,  0,  1, -2,  1,
@@ -272,17 +251,9 @@ private:
             Aeq.block(qi * Aeq_p_rows, qi * Aeq_p_cols, Aeq_p_rows, Aeq_p_cols) << A_waypoints,
                                                                                    A_cont;
         }
-//        std::ofstream file("/home/jungwon/catkin_ws/src/SwarmPlanning/debug/Aeq.txt");
-//        if (file.is_open())
-//        {
-//            file << Aeq << '\n';
-//        }
-//        file.close();
     }
 
-    //                                           //
-    // Equality Constraints Condition Vector deq //
-    //                                           //
+    // Equality constraints condition vector deq
     void build_deq() {
 //        deq_obj.reset(new Eigen::MatrixXd(qn * (2*n + (M-1)*n), outdim));
 //        deq_obj->setZero();
@@ -307,7 +278,6 @@ private:
                     default:
                         std::cerr << "outdim is over 3" << std::endl;
                 }
-
             }
             // Build deq
             int deq_p_rows = d_waypoints.rows() + d_cont.rows();
@@ -317,17 +287,9 @@ private:
             deq.block(qi * deq_p_rows, 0, deq_p_rows, deq_p_cols) << d_waypoints,
                                                                      d_cont;
         }
-//        std::ofstream file("/home/jungwon/catkin_ws/src/SwarmPlanning/debug/deq.txt");
-//        if (file.is_open())
-//        {
-//            file << deq << '\n';
-//        }
-//        file.close();
     }
 
-    //                                           //
-    // Inequality Constraints Mapping Matrix Alq //
-    //                                           //
+    // Inequality constraints mapping matrix Alq
     void build_Alq() {
 //        Alq_obj.reset(new Eigen::MatrixXd(qn*2*(N+1)*M + qn*(qn-1)*(N+1)*M, qn*(N+1)*M));
 //        Alq_obj->setZero();
@@ -362,17 +324,9 @@ private:
 //        Alq_obj->block(Alq_box.rows(), 0, Alq_rel.rows(), Alq_rel.cols()) = Alq_rel;
         Alq << Alq_box,
                Alq_rel;
-//        std::ofstream file("/home/jungwon/catkin_ws/src/SwarmPlanning/debug/Alq.txt");
-//        if (file.is_open())
-//        {
-//            file << Alq << '\n';
-//        }
-//        file.close();
     }
 
-    //                                             //
-    // Inequality Constraints Condition Vector dlq //
-    //                                             //
+    // Inequality constraints condition vector dlq
     void build_dlq(){
 //        dlq_obj.reset(new Eigen::MatrixXd(qn*2*(N+1)*M + qn*(qn-1)*(N+1)*M, outdim));
 //        dlq_obj->setZero();
@@ -454,11 +408,56 @@ private:
 //        dlq_obj->block(dlq_box.rows(), 0, dlq_rel.rows(), dlq_rel.cols()) = dlq_rel;
         dlq << dlq_box,
                dlq_rel;
-//        std::ofstream file("/home/jungwon/catkin_ws/src/SwarmPlanning/debug/dlq.txt");
-//        if (file.is_open())
-//        {
-//            file << dlq << '\n';
-//        }
-//        file.close();
+    }
+
+    void populatebyrow (IloModel model, IloNumVarArray x, IloRangeArray c, int k) {
+        IloEnv env = model.getEnv();
+
+        for(int i = 0; i < Q.rows(); i++) {
+            x.add(IloNumVar(env, -IloInfinity, IloInfinity));
+        }
+
+        IloNumExpr cost(env);
+        for(int i = 0; i < Q.rows(); i++){
+            for(int j = 0; j < Q.cols(); j++){
+                if(Q(i, j) != 0) {
+                    cost += Q(i, j) * x[i] * x[j];
+                }
+            }
+        }
+        model.add(IloMinimize(env, cost));
+
+        for(int i = 0; i < Aeq.rows(); i++){
+            int count = 0;
+            IloNumExpr expr(env);
+            for(int j = 0; j < Aeq.cols(); j++){
+                if(Aeq(i, j) != 0) {
+                    expr += Aeq(i, j) * x[j];
+                }
+            }
+            c.add(expr == deq(i,k));
+            expr.end();
+        }
+
+        for(int i = 0; i < Alq.rows(); i++){
+            IloNumExpr expr(env);
+            for(int j = 0; j < Alq.cols(); j++){
+                if(Alq(i, j) != 0) {
+                    expr += Alq(i, j) * x[j];
+                }
+            }
+            c.add(expr <= dlq(i,k));
+            expr.end();
+        }
+
+        model.add(c);
+    }
+
+    void timeMatrix(double t, Eigen::MatrixXd& tm){
+        tm = Eigen::MatrixXd::Zero(N+1, N+1);
+
+        for(int i = 0; i < N+1; i++){
+            tm(i,i) = pow(t, N-i);
+        }
     }
 };

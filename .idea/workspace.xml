@@ -3,76 +3,76 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
       <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="roscpp_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="run_tests" />
-      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="actionlib_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="gmock" />
+      <config projectName="swarm_planner" targetName="roscpp_generate_messages_py" />
       <config projectName="swarm_planner" targetName="sensor_msgs_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="download_extra_data" />
-      <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_py" />
       <config projectName="swarm_planner" targetName="tf_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="test" />
-      <config projectName="swarm_planner" targetName="tf_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="actionlib_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="init_traj_generator" />
-      <config projectName="swarm_planner" targetName="tf_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="roscpp_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="roscpp_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="doxygen" />
-      <config projectName="swarm_planner" targetName="sensor_msgs_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="tests" />
-      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="sensor_msgs_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="gmock_main" />
-      <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="sensor_msgs_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="actionlib_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_nodejs" />
       <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="tf_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="random_map_generator" />
+      <config projectName="swarm_planner" targetName="test" />
+      <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="actionlib_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="actionlib_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="init_traj_generator" />
+      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_py" />
+      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="gtest_main" />
+      <config projectName="swarm_planner" targetName="tests" />
+      <config projectName="swarm_planner" targetName="sensor_msgs_generate_messages_nodejs" />
+      <config projectName="swarm_planner" targetName="roscpp_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_nodejs" />
+      <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_py" />
+      <config projectName="swarm_planner" targetName="clang-format" />
+      <config projectName="swarm_planner" targetName="clang-tidy" />
       <config projectName="swarm_planner" targetName="actionlib_generate_messages_nodejs" />
       <config projectName="swarm_planner" targetName="tf_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="actionlib_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="clang-tidy" />
-      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="roscpp_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="gmock" />
-      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_nodejs" />
-      <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="tf_generate_messages_cpp" />
-      <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="docs" />
-      <config projectName="swarm_planner" targetName="random_map_generator" />
-      <config projectName="swarm_planner" targetName="gtest" />
-      <config projectName="swarm_planner" targetName="clang-format" />
-      <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="gtest_main" />
-      <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_eus" />
-      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_nodejs" />
       <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_lisp" />
-      <config projectName="swarm_planner" targetName="blend" />
-      <config projectName="swarm_planner" targetName="roscpp_generate_messages_py" />
-      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_py" />
+      <config projectName="swarm_planner" targetName="actionlib_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_py" />
       <config projectName="swarm_planner" targetName="clean_test_results" />
+      <config projectName="swarm_planner" targetName="roscpp_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="docs" />
+      <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="gtest" />
+      <config projectName="swarm_planner" targetName="gmock_main" />
+      <config projectName="swarm_planner" targetName="doxygen" />
+      <config projectName="swarm_planner" targetName="blend" />
+      <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_nodejs" />
+      <config projectName="swarm_planner" targetName="actionlib_generate_messages_py" />
+      <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="tf_generate_messages_nodejs" />
+      <config projectName="swarm_planner" targetName="download_extra_data" />
+      <config projectName="swarm_planner" targetName="octomap_msgs_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="roscpp_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_py" />
+      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_py" />
+      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_nodejs" />
+      <config projectName="swarm_planner" targetName="sensor_msgs_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="tf_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_nodejs" />
+      <config projectName="swarm_planner" targetName="sensor_msgs_generate_messages_py" />
       <config projectName="swarm_planner" targetName="sensor_msgs_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="run_tests" />
+      <config projectName="swarm_planner" targetName="geometry_msgs_generate_messages_nodejs" />
+      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_py" />
+      <config projectName="swarm_planner" targetName="rosgraph_msgs_generate_messages_cpp" />
+      <config projectName="swarm_planner" targetName="actionlib_msgs_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="std_msgs_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="tf2_msgs_generate_messages_py" />
+      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_lisp" />
+      <config projectName="swarm_planner" targetName="nav_msgs_generate_messages_eus" />
+      <config projectName="swarm_planner" targetName="roscpp_generate_messages_nodejs" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -84,19 +84,37 @@
     <list default="true" id="b0ce82f3-b4e7-4017-88fe-53b1694301e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/blend.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/blend.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/blend.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/blend.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/blend.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/blend.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/blend.dir/src/blend.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/blend.dir/src/blend.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/random_map_generator.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/random_map_generator.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/random_map_generator.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/random_map_generator.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/random_map_generator.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/random_map_generator.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/random_map_generator.dir/src/random_map_generator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/random_map_generator.dir/src/random_map_generator.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/devel/lib/swarm_planner/blend" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/devel/lib/swarm_planner/blend" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/devel/lib/swarm_planner/init_traj_generator" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/devel/lib/swarm_planner/init_traj_generator" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/BoxGenerator.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/BoxGenerator.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/ECBSLauncher.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/ECBSLauncher.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/SwarmPlanner.hpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blend.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/blend.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/devel/lib/swarm_planner/random_map_generator" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/devel/lib/swarm_planner/random_map_generator" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock_main.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock_main.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock_main.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/CMakeFiles/gmock_main.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest_main.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest_main.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest_main.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/CMakeFiles/gtest_main.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/gtest/gtest/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/swarm_planner.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/swarm_planner.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/third_party/ecbs/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/third_party/ecbs/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SwarmPlanner.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/SwarmPlanner.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launch/runsim_walls2_8agents.launch" beforeDir="false" afterPath="$PROJECT_DIR$/launch/runsim_walls2_8agents.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/init_traj_generator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/init_traj_generator.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -146,9 +164,9 @@
     <session id="-272270779">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="2" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -162,17 +180,18 @@
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.opened" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cpp" value="53" />
-          <entry key="h" value="60" />
+          <entry key="h" value="67" />
           <entry key="hpp" value="18" />
           <entry key="hxx" value="2" />
-          <entry key="init_traj_generator (disassembly)" value="59" />
+          <entry key="init_traj_generator (disassembly)" value="60" />
           <entry key="obstacle_box_generator (disassembly)" value="10" />
+          <entry key="tcc" value="1" />
           <entry key="txt" value="5" />
           <entry key="xml" value="1" />
         </counts>
@@ -180,24 +199,24 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="5" />
-          <entry key="Disassembly" value="69" />
-          <entry key="ObjectiveC" value="133" />
+          <entry key="Disassembly" value="70" />
+          <entry key="ObjectiveC" value="141" />
           <entry key="rospackage" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="5691" />
+          <entry key="cpp" value="6135" />
           <entry key="h" value="229" />
-          <entry key="hpp" value="22034" />
-          <entry key="mm" value="267" />
-          <entry key="txt" value="822" />
+          <entry key="hpp" value="24806" />
+          <entry key="mm" value="287" />
+          <entry key="txt" value="830" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CMakeLists.txt" value="822" />
-          <entry key="ObjectiveC" value="28221" />
+          <entry key="CMakeLists.txt" value="830" />
+          <entry key="ObjectiveC" value="31457" />
         </counts>
       </usages-collector>
     </session>
@@ -207,17 +226,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="180">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/init_traj_generator.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="115" column="49" selection-start-line="115" selection-start-column="49" selection-end-line="115" selection-end-column="49" />
+            <state relative-caret-position="-1166">
+              <caret line="111" column="86" lean-forward="true" selection-start-line="111" selection-start-column="86" selection-end-line="111" selection-end-column="86" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -228,11 +247,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/ECBSLauncher.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2920">
-              <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="19" />
-              <folding>
-                <element signature="e#57#75#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="162">
+              <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -240,22 +256,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/BoxGenerator.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="344" column="19" selection-start-line="344" selection-start-column="19" selection-end-line="344" selection-end-column="19" />
-              <folding>
-                <element signature="e#57#75#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-198">
+              <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/SwarmPlanner.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="161" column="17" lean-forward="true" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
+            <state relative-caret-position="560">
+              <caret line="384" column="28" lean-forward="true" selection-start-line="384" selection-start-column="28" selection-end-line="384" selection-end-column="28" />
               <folding>
-                <element signature="e#56#74#0" expanded="true" />
+                <element signature="e#15#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -265,9 +278,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nei</find>
-      <find>stateva</find>
-      <find>statevalid</find>
       <find>margin</find>
       <find>Float32</find>
       <find>Header</find>
@@ -295,6 +305,9 @@
       <find>invalid</find>
       <find>txt</find>
       <find>first</find>
+      <find>obsbox_vis_pubs</find>
+      <find>CMAKE_CXX_FLAGS</find>
+      <find>quad_size</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -326,10 +339,10 @@
         <option value="$PROJECT_DIR$/include/SwarmPlanner.h" />
         <option value="$PROJECT_DIR$/src/SwarmPlanner.cpp" />
         <option value="$PROJECT_DIR$/include/ECBSLauncher.hpp" />
-        <option value="$PROJECT_DIR$/src/init_traj_generator.cpp" />
         <option value="$PROJECT_DIR$/include/BoxGenerator.hpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/SwarmPlanner.hpp" />
+        <option value="$PROJECT_DIR$/src/init_traj_generator.cpp" />
       </list>
     </option>
   </component>
@@ -873,12 +886,13 @@
       <workItem from="1548305374820" duration="41615000" />
       <workItem from="1548588969835" duration="9685000" />
       <workItem from="1548670378011" duration="10605000" />
-      <workItem from="1548728717775" duration="39337000" />
+      <workItem from="1548728717775" duration="57229000" />
+      <workItem from="1548917289165" duration="690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198234000" />
+    <option name="totallyTimeSpent" value="216816000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -893,13 +907,13 @@
     <frame x="1985" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2412839" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24405092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4975097" weight="0.32984293" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4975097" weight="0.32984293" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3434555" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3434555" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4997233" weight="0.32984293" />
@@ -923,24 +937,36 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/include/SwarmPlanner.hpp</url>
-          <line>63</line>
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="relative_boxes" language="ObjectiveC" />
-        <watch expression="ts_total" language="ObjectiveC" />
+        <watch expression="coef" language="ObjectiveC" />
+        <watch expression="c_temp" language="ObjectiveC" />
+        <watch expression="msgs_traj_coef" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>msgs_traj_coef</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>c</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>c_temp</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>coef</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>ts_total</expression-string>
         <language-id>ObjectiveC</language-id>
@@ -971,40 +997,9 @@
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>offsetZ</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>box_log.size()</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>offsetY</expression-string>
-        <language-id>ObjectiveC</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/third_party/ecbs/include/ecbs.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BoxGenerator.cpp" />
-    <entry file="file://$PROJECT_DIR$/include/BoxGenerator.h" />
-    <entry file="file:///usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="215" column="22" selection-start-line="215" selection-start-column="22" selection-end-line="215" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/5/bits/stl_pair.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1140,13 +1135,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///opt/ibm/ILOG/CPLEX_Studio128/concert/include/ilconcert/iloenv.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="2372" column="4" selection-start-line="2372" selection-start-column="4" selection-end-line="2372" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/third_party/ecbs/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-502">
@@ -1156,13 +1144,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SwarmPlanner.cpp" />
     <entry file="file://$PROJECT_DIR$/include/SwarmPlanner.h" />
-    <entry file="file:///opt/ibm/ILOG/CPLEX_Studio128/concert/include/ilconcert/ilosys.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="329" column="41" selection-start-line="329" selection-start-column="21" selection-end-line="329" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/blend.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1226,27 +1207,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/ibm/ILOG/CPLEX_Studio128/concert/include/ilconcert/ilolinear.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="1641" column="20" selection-start-line="1641" selection-start-column="20" selection-end-line="1641" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/init_traj_generator.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="115" column="49" selection-start-line="115" selection-start-column="49" selection-end-line="115" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1257,39 +1221,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file:///opt/ibm/ILOG/CPLEX_Studio128/concert/include/ilconcert/ilosys.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="261">
+          <caret line="564" column="13" selection-start-line="564" selection-start-column="13" selection-end-line="564" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/ibm/ILOG/CPLEX_Studio128/cplex/include/ilcplex/ilocplexi.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="618" column="7" selection-start-line="618" selection-start-column="7" selection-end-line="618" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/ibm/ILOG/CPLEX_Studio128/concert/include/ilconcert/iloenv.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="2355" column="6" selection-start-line="2355" selection-start-column="6" selection-end-line="2355" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Core/CwiseNullaryOp.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="203" column="20" selection-start-line="203" selection-start-column="20" selection-end-line="203" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/eigen3/Eigen/src/Core/CommaInitializer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/ECBSLauncher.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2920">
-          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="162">
+          <caret line="9" selection-start-line="9" selection-end-line="9" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/vector.tcc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/5/bits/stl_vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13230">
+          <caret line="735" selection-start-line="735" selection-end-line="735" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/SwarmPlanner.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="384" column="28" lean-forward="true" selection-start-line="384" selection-start-column="28" selection-end-line="384" selection-end-column="28" />
           <folding>
-            <element signature="e#57#75#0" expanded="true" />
+            <element signature="e#15#33#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/BoxGenerator.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="344" column="19" selection-start-line="344" selection-start-column="19" selection-end-line="344" selection-end-column="19" />
-          <folding>
-            <element signature="e#57#75#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-198">
+          <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/SwarmPlanner.hpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="161" column="17" lean-forward="true" selection-start-line="161" selection-start-column="17" selection-end-line="161" selection-end-column="17" />
+        <state relative-caret-position="180">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/init_traj_generator.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1166">
+          <caret line="111" column="86" lean-forward="true" selection-start-line="111" selection-start-column="86" selection-end-line="111" selection-end-column="86" />
           <folding>
-            <element signature="e#56#74#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

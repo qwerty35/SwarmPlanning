@@ -153,7 +153,10 @@ CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinet
 CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/ros/wall_timer_options.h
 CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/rosconsole/macros_generated.h
 CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/std_msgs/ColorRGBA.h
+CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/std_msgs/Float64MultiArray.h
 CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/std_msgs/Header.h
+CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/std_msgs/MultiArrayDimension.h
+CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/std_msgs/MultiArrayLayout.h
 CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/visualization_msgs/Marker.h
 CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/visualization_msgs/MarkerArray.h
 CMakeFiles/init_traj_generator.dir/src/init_traj_generator.cpp.o: /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h

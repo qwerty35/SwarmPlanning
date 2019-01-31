@@ -124,6 +124,7 @@
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_GUI_LIB"/>
 					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
 					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
 					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
 					<Add directory="/usr/include/vtk-6.2"/>
@@ -193,6 +194,7 @@
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_GUI_LIB"/>
 					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
 					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/include"/>
 					<Add directory="/home/jungwon/catkin_ws/src/SwarmPlanning/third_party/ecbs/include"/>
 					<Add directory="/usr/include/vtk-6.2"/>

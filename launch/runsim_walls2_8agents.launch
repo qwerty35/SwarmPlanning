@@ -253,6 +253,6 @@
   <!-- Drones End-->
 
   <!-- Nodes -->
-  <node pkg="rviz" type="rviz" name="rviz"/>
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find swarm_planner)/launch/rviz_config/config_8agents.rviz"/>
   <!-- Nodes End-->
 </launch>

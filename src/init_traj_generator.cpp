@@ -2,6 +2,8 @@
 #include <iostream>
 #include <math.h>
 
+#include <timer.hpp>
+
 #include <ECBSLauncher.hpp>
 #include <BoxGenerator.hpp>
 #include <SwarmPlanner.hpp>
@@ -20,6 +22,7 @@
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/Point.h>
 #include <nav_msgs/Path.h>
+#include <std_msgs/Float64MultiArray.h>
 
 //Octomap
 #include <octomap_msgs/Octomap.h>
@@ -47,7 +50,7 @@ void octomapCallback(const octomap_msgs::Octomap octomap_msg)
     has_octomap = true;
 }
 
-void visObsbox(ros::NodeHandle n, std::vector<ros::Publisher>& obsbox_vis_pubs, std::vector<std::vector<std::pair<octomap::point3d,octomap::point3d>>> obstacle_boxes){
+void visObsbox(ros::NodeHandle n, std::vector<ros::Publisher>& obsbox_vis_pubs, const std::vector<std::vector<std::pair<octomap::point3d,octomap::point3d>>>& obstacle_boxes){
     obsbox_vis_pubs.resize(obstacle_boxes.size());
     for (int a=0; a< obstacle_boxes.size(); a++){
         obsbox_vis_pubs.at(a) = n.advertise<visualization_msgs::MarkerArray>("/mav" + std::to_string(a) + "/obstacle_box", 1);
@@ -87,6 +90,15 @@ void visObsbox(ros::NodeHandle n, std::vector<ros::Publisher>& obsbox_vis_pubs, 
     }
 }
 
+void publishTrajCoef(ros::NodeHandle n, std::vector<ros::Publisher>& traj_coef_pubs, const std::vector<std_msgs::Float64MultiArray>& msgs_traj_coef){
+    int qn = msgs_traj_coef.size();
+    traj_coef_pubs.resize(qn);
+    for(int qi = 0; qi < qn; qi++){
+        traj_coef_pubs[qi] = n.advertise<std_msgs::Float64MultiArray>("/mav" + std::to_string(qi) + "/traj_coef", 1);
+        traj_coef_pubs[qi].publish(msgs_traj_coef[qi]);
+    }
+}
+
 int main(int argc, char* argv[]) {
     ros::init (argc, argv, "init_traj_generator");
     ros::NodeHandle n( "~" );
@@ -95,11 +107,12 @@ int main(int argc, char* argv[]) {
 
     ROS_WARN("Init_traj_generator");
     ros::Subscriber octomap_sub = n.subscribe( "/octomap_full", 1, octomapCallback );
-    ros::Publisher init_poses_pub = n.advertise<geometry_msgs::PoseArray>("/world/init_poses", 1);
-    ros::Publisher ecbs_path_pub = n.advertise<nav_msgs::Path>("/ecbs/init_traj", 1);
-    ros::Publisher obsbox_pub = n.advertise<nav_msgs::Path>("/box/obstacle_box", 1);
+//    ros::Publisher init_poses_pub = n.advertise<geometry_msgs::PoseArray>("/world/init_poses", 1);
+//    ros::Publisher ecbs_path_pub = n.advertise<nav_msgs::Path>("/ecbs/init_traj", 1);
+//    ros::Publisher obsbox_pub = n.advertise<nav_msgs::Path>("/box/obstacle_box", 1);
     std::vector<ros::Publisher> obsbox_vis_pubs;
-
+    ros::Publisher traj_info_pub = n.advertise<std_msgs::Float64MultiArray>("/traj_info", 1);
+    std::vector<ros::Publisher> traj_coef_pubs;
 
     double x_size, y_size, z_size;
     double ecbs_w, ecbs_xy_res, ecbs_z_res, ecbs_margin;
@@ -165,6 +178,9 @@ int main(int argc, char* argv[]) {
     std::shared_ptr<SwarmPlanner> swarm_planner;
     while (ros::ok()) {
         if (has_octomap && !has_path) {
+            Timer timer;
+
+            timer.reset();
             ROS_INFO("Launch ECBS");
             ecbs_launcher.reset(new ECBSLauncher(x_min, y_min, z_min, x_max, y_max, z_max,
                                                  ecbs_w, ecbs_xy_res, ecbs_z_res, ecbs_margin,
@@ -185,13 +201,18 @@ int main(int argc, char* argv[]) {
                                                  box_generator.get()->ts_each, box_generator.get()->ts_total));
             swarm_planner.get()->update();
 
+            timer.stop();
+            std::cout << "Overall runtime: " << timer.elapsedSeconds() << std::endl;
+
             has_path = true;
         }
         if (has_path) {
-            init_poses_pub.publish(init_poses);
-            ecbs_path_pub.publish(ecbs_launcher.get()->msgs_ecbs_traj);
-            obsbox_pub.publish(box_generator.get()->msgs_obstacle_boxes);
+//            init_poses_pub.publish(init_poses);
+//            ecbs_path_pub.publish(ecbs_launcher.get()->msgs_ecbs_traj);
+//            obsbox_pub.publish(box_generator.get()->msgs_obstacle_boxes);
             visObsbox(n, obsbox_vis_pubs, box_generator.get()->obstacle_boxes);
+            traj_info_pub.publish(swarm_planner.get()->msgs_traj_info);
+            publishTrajCoef(n, traj_coef_pubs, swarm_planner.get()->msgs_traj_coef);
         }
         ros::spinOnce();
         rate.sleep();

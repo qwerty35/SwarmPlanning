@@ -1,0 +1,1009 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /TF1
+        - /MarkerArray1
+        - /RobotModel1
+        - /RobotModel2
+        - /RobotModel3
+        - /RobotModel4
+        - /RobotModel5
+        - /RobotModel6
+        - /RobotModel7
+        - /RobotModel8
+      Splitter Ratio: 0.53441298
+    Tree Height: 775
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679016
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: ""
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.0299999993
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        mav0/base_link:
+          Value: true
+        mav0/base_link_inertia:
+          Value: false
+        mav0/imu_link:
+          Value: false
+        mav0/imugt_link:
+          Value: false
+        mav0/odometry_sensor1:
+          Value: false
+        mav0/odometry_sensor1_link:
+          Value: false
+        mav0/odometry_sensorgt_link:
+          Value: false
+        mav0/rotor_0:
+          Value: false
+        mav0/rotor_1:
+          Value: false
+        mav0/rotor_2:
+          Value: false
+        mav0/rotor_3:
+          Value: false
+        mav1/base_link:
+          Value: true
+        mav1/base_link_inertia:
+          Value: false
+        mav1/imu_link:
+          Value: false
+        mav1/imugt_link:
+          Value: false
+        mav1/odometry_sensor1:
+          Value: false
+        mav1/odometry_sensor1_link:
+          Value: false
+        mav1/odometry_sensorgt_link:
+          Value: false
+        mav1/rotor_0:
+          Value: false
+        mav1/rotor_1:
+          Value: false
+        mav1/rotor_2:
+          Value: false
+        mav1/rotor_3:
+          Value: false
+        mav2/base_link:
+          Value: true
+        mav2/base_link_inertia:
+          Value: false
+        mav2/imu_link:
+          Value: false
+        mav2/imugt_link:
+          Value: false
+        mav2/odometry_sensor1:
+          Value: false
+        mav2/odometry_sensor1_link:
+          Value: false
+        mav2/odometry_sensorgt_link:
+          Value: false
+        mav2/rotor_0:
+          Value: false
+        mav2/rotor_1:
+          Value: false
+        mav2/rotor_2:
+          Value: false
+        mav2/rotor_3:
+          Value: false
+        mav3/base_link:
+          Value: true
+        mav3/base_link_inertia:
+          Value: false
+        mav3/imu_link:
+          Value: false
+        mav3/imugt_link:
+          Value: false
+        mav3/odometry_sensor1:
+          Value: false
+        mav3/odometry_sensor1_link:
+          Value: false
+        mav3/odometry_sensorgt_link:
+          Value: false
+        mav3/rotor_0:
+          Value: false
+        mav3/rotor_1:
+          Value: false
+        mav3/rotor_2:
+          Value: false
+        mav3/rotor_3:
+          Value: false
+        mav4/base_link:
+          Value: true
+        mav4/base_link_inertia:
+          Value: false
+        mav4/imu_link:
+          Value: false
+        mav4/imugt_link:
+          Value: false
+        mav4/odometry_sensor1:
+          Value: false
+        mav4/odometry_sensor1_link:
+          Value: false
+        mav4/odometry_sensorgt_link:
+          Value: false
+        mav4/rotor_0:
+          Value: false
+        mav4/rotor_1:
+          Value: false
+        mav4/rotor_2:
+          Value: false
+        mav4/rotor_3:
+          Value: false
+        mav5/base_link:
+          Value: true
+        mav5/base_link_inertia:
+          Value: false
+        mav5/imu_link:
+          Value: false
+        mav5/imugt_link:
+          Value: false
+        mav5/odometry_sensor1:
+          Value: false
+        mav5/odometry_sensor1_link:
+          Value: false
+        mav5/odometry_sensorgt_link:
+          Value: false
+        mav5/rotor_0:
+          Value: false
+        mav5/rotor_1:
+          Value: false
+        mav5/rotor_2:
+          Value: false
+        mav5/rotor_3:
+          Value: false
+        mav6/base_link:
+          Value: true
+        mav6/base_link_inertia:
+          Value: false
+        mav6/imu_link:
+          Value: false
+        mav6/imugt_link:
+          Value: false
+        mav6/odometry_sensor1:
+          Value: false
+        mav6/odometry_sensor1_link:
+          Value: false
+        mav6/odometry_sensorgt_link:
+          Value: false
+        mav6/rotor_0:
+          Value: false
+        mav6/rotor_1:
+          Value: false
+        mav6/rotor_2:
+          Value: false
+        mav6/rotor_3:
+          Value: false
+        mav7/base_link:
+          Value: true
+        mav7/base_link_inertia:
+          Value: false
+        mav7/imu_link:
+          Value: false
+        mav7/imugt_link:
+          Value: false
+        mav7/odometry_sensor1:
+          Value: false
+        mav7/odometry_sensor1_link:
+          Value: false
+        mav7/odometry_sensorgt_link:
+          Value: false
+        mav7/rotor_0:
+          Value: false
+        mav7/rotor_1:
+          Value: false
+        mav7/rotor_2:
+          Value: false
+        mav7/rotor_3:
+          Value: false
+        world:
+          Value: false
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: false
+      Show Axes: false
+      Show Names: true
+      Tree:
+        world:
+          mav0/base_link:
+            mav0/base_link_inertia:
+              {}
+            mav0/imu_link:
+              {}
+            mav0/imugt_link:
+              {}
+            mav0/odometry_sensor1_link:
+              {}
+            mav0/odometry_sensorgt_link:
+              {}
+            mav0/rotor_0:
+              {}
+            mav0/rotor_1:
+              {}
+            mav0/rotor_2:
+              {}
+            mav0/rotor_3:
+              {}
+          mav0/odometry_sensor1:
+            {}
+          mav1/base_link:
+            mav1/base_link_inertia:
+              {}
+            mav1/imu_link:
+              {}
+            mav1/imugt_link:
+              {}
+            mav1/odometry_sensor1_link:
+              {}
+            mav1/odometry_sensorgt_link:
+              {}
+            mav1/rotor_0:
+              {}
+            mav1/rotor_1:
+              {}
+            mav1/rotor_2:
+              {}
+            mav1/rotor_3:
+              {}
+          mav1/odometry_sensor1:
+            {}
+          mav2/base_link:
+            mav2/base_link_inertia:
+              {}
+            mav2/imu_link:
+              {}
+            mav2/imugt_link:
+              {}
+            mav2/odometry_sensor1_link:
+              {}
+            mav2/odometry_sensorgt_link:
+              {}
+            mav2/rotor_0:
+              {}
+            mav2/rotor_1:
+              {}
+            mav2/rotor_2:
+              {}
+            mav2/rotor_3:
+              {}
+          mav2/odometry_sensor1:
+            {}
+          mav3/base_link:
+            mav3/base_link_inertia:
+              {}
+            mav3/imu_link:
+              {}
+            mav3/imugt_link:
+              {}
+            mav3/odometry_sensor1_link:
+              {}
+            mav3/odometry_sensorgt_link:
+              {}
+            mav3/rotor_0:
+              {}
+            mav3/rotor_1:
+              {}
+            mav3/rotor_2:
+              {}
+            mav3/rotor_3:
+              {}
+          mav3/odometry_sensor1:
+            {}
+          mav4/base_link:
+            mav4/base_link_inertia:
+              {}
+            mav4/imu_link:
+              {}
+            mav4/imugt_link:
+              {}
+            mav4/odometry_sensor1_link:
+              {}
+            mav4/odometry_sensorgt_link:
+              {}
+            mav4/rotor_0:
+              {}
+            mav4/rotor_1:
+              {}
+            mav4/rotor_2:
+              {}
+            mav4/rotor_3:
+              {}
+          mav4/odometry_sensor1:
+            {}
+          mav5/base_link:
+            mav5/base_link_inertia:
+              {}
+            mav5/imu_link:
+              {}
+            mav5/imugt_link:
+              {}
+            mav5/odometry_sensor1_link:
+              {}
+            mav5/odometry_sensorgt_link:
+              {}
+            mav5/rotor_0:
+              {}
+            mav5/rotor_1:
+              {}
+            mav5/rotor_2:
+              {}
+            mav5/rotor_3:
+              {}
+          mav5/odometry_sensor1:
+            {}
+          mav6/base_link:
+            mav6/base_link_inertia:
+              {}
+            mav6/imu_link:
+              {}
+            mav6/imugt_link:
+              {}
+            mav6/odometry_sensor1_link:
+              {}
+            mav6/odometry_sensorgt_link:
+              {}
+            mav6/rotor_0:
+              {}
+            mav6/rotor_1:
+              {}
+            mav6/rotor_2:
+              {}
+            mav6/rotor_3:
+              {}
+          mav6/odometry_sensor1:
+            {}
+          mav7/base_link:
+            mav7/base_link_inertia:
+              {}
+            mav7/imu_link:
+              {}
+            mav7/imugt_link:
+              {}
+            mav7/odometry_sensor1_link:
+              {}
+            mav7/odometry_sensorgt_link:
+              {}
+            mav7/rotor_0:
+              {}
+            mav7/rotor_1:
+              {}
+            mav7/rotor_2:
+              {}
+            mav7/rotor_3:
+              {}
+          mav7/odometry_sensor1:
+            {}
+      Update Interval: 0
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: false
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.00999999978
+      Style: Flat Squares
+      Topic: /random_map_sensing/all_map
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: false
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /occupied_cells_vis_array
+      Name: MarkerArray
+      Namespaces:
+        map: true
+      Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        mav0/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav0/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav0/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav0/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav0/odometry_sensor1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav0/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav0/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav0/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav0/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav0/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /mav0/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        mav1/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav1/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav1/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav1/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav1/odometry_sensor1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav1/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav1/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav1/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav1/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav1/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /mav1/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        mav2/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav2/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav2/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav2/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav2/odometry_sensor1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav2/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav2/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav2/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav2/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav2/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /mav2/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        mav3/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav3/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav3/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav3/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav3/odometry_sensor1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav3/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav3/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav3/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav3/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav3/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /mav3/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        mav4/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav4/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav4/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav4/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav4/odometry_sensor1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav4/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav4/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav4/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav4/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav4/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /mav4/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        mav5/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav5/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav5/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav5/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav5/odometry_sensor1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav5/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav5/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav5/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav5/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav5/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /mav5/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        mav6/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav6/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav6/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav6/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav6/odometry_sensor1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav6/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav6/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav6/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav6/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav6/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /mav6/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        mav7/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav7/base_link_inertia:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav7/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav7/imugt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav7/odometry_sensor1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav7/odometry_sensorgt_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        mav7/rotor_0:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav7/rotor_1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav7/rotor_2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        mav7/rotor_3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: /mav7/robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Default Light: true
+    Fixed Frame: world
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 16.5589447
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.0599999987
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0
+        Y: 0
+        Z: 0
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.0500000007
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.00999999978
+      Pitch: 1.47479665
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 1.5649271
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1056
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd0000000400000000000001fd00000396fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000396000000d700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000396fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000002800000396000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f0000030000fffffffb0000000800540069006d00650100000000000004500000000000000000000004270000039600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1855
+  X: 1985
+  Y: 24
